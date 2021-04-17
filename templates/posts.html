@@ -3,4 +3,29 @@
 
 <h3>Trip Reviews</h3>
 
+<!-- Collapsible Accordion-->
+
+    <ul class="collapsible">
+        {% for post in posts %}
+        <li>
+            <div class="row collapsible-header">
+                <div class="post-img col s12 m4">
+                </div>
+
+                <div class="col s12 m7">
+                    <h5></i>{{ post.post_title }}</h5>
+                    <h5></i>{{ post.category_name }}</h5>
+                </div>
+            </div>
+
+            <div class="col s9"></div>
+            <div class="collapsible-body">
+                <p>{{ post.post_description }}</p>
+            </div>
+        </li>
+        {% endfor %}
+    </ul>
+</section>
+
+
 {% endblock %}
