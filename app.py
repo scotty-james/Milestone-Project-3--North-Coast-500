@@ -120,6 +120,15 @@ def logout():
 @app.route('/add_post', methods=['GET', 'POST'])
 def add_post():
     form = AddReviewForm(request.form)
+    if form.validate_on_submit():
+        mongo.db.posts.insert_one({
+            "category_name": request.form.get("category_name"),
+            "post_title": request.form.get("post_title"),
+            "post_description": request.form.get("post_description"),
+            "image_url": request.form.get("image_url"),
+            "created_by": session["user"],
+        })
+        return redirect(url_for('get_posts', title='New Post Added'))
     return render_template('add_post.html', title='Add Post', form=form)
 
 
