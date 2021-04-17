@@ -5,7 +5,7 @@ from flask import (
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 from werkzeug.security import generate_password_hash, check_password_hash
-from forms import SignupForm, SigninForm
+from forms import SignupForm, SigninForm, AddReviewForm
 if os.path.exists("env.py"):
     import env
 
@@ -115,7 +115,17 @@ def logout():
     return redirect(url_for("login"))
 
 
+# Add Review Route
+
+@app.route('/add_post', methods=['GET', 'POST'])
+def add_post():
+    form = AddReviewForm(request.form)
+    return render_template('add_post.html', title='Add Post', form=form)
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
             debug=True)
+
+
