@@ -23,13 +23,13 @@
                 <li><a href="{{ url_for('home') }}">Home</a></li>
                 <li><a href="{{ url_for('get_posts') }}">Reviews</a></li>
 				<li><a href="#">Profile</a></li>
-					<li><a href="#">Post Review</a></li>
-					<li><a href="#">Sign In</a></li>
-                    <li><a href="#">Sign Out</a></li>
-					<li><a href="{{ url_for('register') }}">Sign Up</a></li>
-				</ul>
-			</div>
-		</nav>
+				<li><a href="#">Post Review</a></li>
+				<li><a href="{{ url_for('login') }}">Sign In</a></li>
+                <li><a href="#">Sign Out</a></li>
+				<li><a href="{{ url_for('register') }}">Sign Up</a></li>
+			</ul>
+		</div>
+	  </nav>
 
   <!-- mobile sidenav -->
         <ul class="sidenav" id="mobile-demo">
@@ -38,7 +38,7 @@
          <li><a href="{{ url_for('get_posts') }}">Reviews</a></li>
          <li><a href="#">Profile</a></li>
          <li><a href="#">Post Review</a></li>
-         <li><a href="#">Sign In</a></li>
+         <li><a href="{{ url_for('login') }}">Sign In</a></li>
          <li><a href="#">Sign Out</a></li>
          <li><a href="{{ url_for('register') }}">Sign Up</a></li>
         </ul>

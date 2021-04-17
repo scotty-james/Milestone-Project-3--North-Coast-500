@@ -5,7 +5,7 @@ from flask import (
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 from werkzeug.security import generate_password_hash, check_password_hash
-from forms import SignupForm
+from forms import SignupForm, SigninForm
 if os.path.exists("env.py"):
     import env
 
@@ -30,15 +30,14 @@ def get_posts():
     posts = mongo.db.posts.find()
     return render_template("posts.html", posts=posts)
 
+# Sign Up Form Route
 
 @app.route('/register', methods=['GET', 'POST'])
 def register():
-    """Handles registration functionality"""
     form = SignupForm(request.form)
     if form.validate_on_submit():
-        # get all the users
         existing_users = mongo.db.users
-        # check if username already exists in db
+        # checks database to see if username exists
         existing_user = mongo.db.users.find_one(
             {"username": request.form.get("username").lower()})
 
@@ -58,6 +57,40 @@ def register():
         return redirect(url_for("register", username=session["user"]))
 
     return render_template("register.html", form=form)
+
+# Sign in Form Route
+
+@app.route('/login', methods=['GET', 'POST'])
+def login():
+    if session.get('logged_in'):
+        if session['logged_in'] is True:
+            return redirect(url_for('index', title="Sign In"))
+
+    form = SigninForm()
+
+    if form.validate_on_submit():
+        # checks database to see if username exists
+        existing_user = mongo.db.users.find_one(
+            {"username": request.form.get("username").lower()})
+
+        if existing_user:
+            # checks hashed password to ensure match with user input
+            if check_password_hash(
+                    existing_user["password"], request.form.get("password")):
+                        session["user"] = request.form.get("username").lower()
+                        flash("Welcome, {}".format(request.form.get("username")))
+                        return redirect(url_for("login", username=session["user"]))
+            else:
+                # in case where password does not match
+                flash("Incorrect Username and/or Password")
+                return redirect(url_for("login", form=form))
+
+        else:
+            # in case where username does not exist
+            flash("Incorrect Username and/or Password")
+            return redirect(url_for("login", form=form))
+
+    return render_template("login.html", form=form)
 
 
 if __name__ == "__main__":
