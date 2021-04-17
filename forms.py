@@ -17,10 +17,17 @@ class SigninForm(FlaskForm):
     submit = SubmitField('Sign In')
 
 
-
 class AddReviewForm(FlaskForm):
     category_name = StringField('Category', validators=[DataRequired()])
     post_title = StringField('Title', validators=[DataRequired()])
     post_description = TextAreaField('Review', validators=[DataRequired()])
     image_url = StringField('Image Url', validators=[DataRequired()])
     submit = SubmitField('Add Review')
+
+
+class EditReviewForm(FlaskForm):
+    category_name = StringField('Category', validators=[DataRequired()])
+    post_title = StringField('Title', validators=[DataRequired()])
+    post_description = TextAreaField('Review', validators=[DataRequired()])
+    image_url = StringField('Image Url', validators=[DataRequired()])
+    submit = SubmitField('Update Review')

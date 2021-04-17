@@ -5,7 +5,7 @@ from flask import (
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 from werkzeug.security import generate_password_hash, check_password_hash
-from forms import SignupForm, SigninForm, AddReviewForm
+from forms import SignupForm, SigninForm, AddReviewForm, EditReviewForm
 if os.path.exists("env.py"):
     import env
 
@@ -132,9 +132,31 @@ def add_post():
     return render_template('add_post.html', title='Add Post', form=form)
 
 
+
+@app.route('/edit_post/<post_id>', methods=['GET', 'POST'])
+def edit_post(post_id):
+    post_db = mongo.db.posts.find_one({'_id': ObjectId(post_id)})
+    if request.method == 'GET':
+        form = EditReviewForm(data=post_db)
+        return render_template('edit_post.html', post=post_db, form=form)
+    form = EditReviewForm(request.form)
+    if form.validate_on_submit():
+        post_db = mongo.db.posts
+        post_db.update_one({
+            '_id': ObjectId(post_id),
+        }, {
+            '$set': {
+                "category_name": request.form.get("category_name"),
+                "post_title": request.form.get("post_title"),
+                "post_description": request.form.get("post_description"),
+                "image_url": request.form.get("image_url"),
+                "created_by": session["user"],
+            }
+        })
+        return redirect(url_for('get_posts', title='Review Updated'))
+    return render_template('edit_post.html', post=post_db, form=form)
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
             debug=True)
-
-
