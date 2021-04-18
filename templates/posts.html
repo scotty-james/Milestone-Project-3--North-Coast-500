@@ -16,8 +16,9 @@
                 <div class="col s12 m7">
                     <h5></i>{{ post.post_title }}</h5>
                     <h5></i>{{ post.category_name }}</h5>
-                <!--Takes user rating string and converts/displays star(s)-->
-                    <div class="review">
+                    <h5></i>{{ post.star_rating }}</h5>
+                     <!--Takes user rating string and converts/displays star(s)-->
+                     <div class="review">
                         {% if post.star_rating == "5" %}
                         <h4 class="fas fa-star"></h4>
                         <h4 class="fas fa-star"></h4>
@@ -40,7 +41,8 @@
                         <h4 class="fas fa-star"></h4>
                         </h4>
                         {% endif %}
-                    </div>
+                        <p><em>Posted by {{ post.created_by }} | {{ post.review_date }}</em></p>
+                </div>
 
                 <a href="{{ url_for('delete_post', post_id=post._id) }}" class="not-collapse btn black">Delete Review </a>
                 <a href="{{ url_for('edit_post', post_id=post._id) }}" class="not-collapse btn black">Update Review</a>

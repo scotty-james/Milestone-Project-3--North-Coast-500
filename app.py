@@ -6,6 +6,7 @@ from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 from werkzeug.security import generate_password_hash, check_password_hash
 from forms import SignupForm, SigninForm, AddReviewForm, EditReviewForm, DeleteForm
+from datetime import date
 if os.path.exists("env.py"):
     import env
 
@@ -119,6 +120,8 @@ def logout():
 
 @app.route('/add_post', methods=['GET', 'POST'])
 def add_post():
+    today_date = date.today()
+    current_date = today_date.strftime("%d %b %y")
     form = AddReviewForm(request.form)
     if form.validate_on_submit():
         mongo.db.posts.insert_one({
@@ -128,6 +131,7 @@ def add_post():
             "post_description": request.form.get("post_description"),
             "image_url": request.form.get("image_url"),
             "created_by": session["user"],
+            "review_date": current_date
         })
         return redirect(url_for('get_posts', title='New Post Added'))
     return render_template('add_post.html', title='Add Post', form=form)
@@ -136,6 +140,8 @@ def add_post():
 
 @app.route('/edit_post/<post_id>', methods=['GET', 'POST'])
 def edit_post(post_id):
+    today_date = date.today()
+    current_date = today_date.strftime("%d %b %y")
     post_db = mongo.db.posts.find_one({'_id': ObjectId(post_id)})
     if request.method == 'GET':
         form = EditReviewForm(data=post_db)
@@ -153,6 +159,7 @@ def edit_post(post_id):
                 "post_description": request.form.get("post_description"),
                 "image_url": request.form.get("image_url"),
                 "created_by": session["user"],
+                "review_date": current_date
             }
         })
         return redirect(url_for('get_posts', title='Review Updated'))
