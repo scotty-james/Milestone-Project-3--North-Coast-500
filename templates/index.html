@@ -1,21 +1,17 @@
 {% extends "base.html" %}
 {% block content %}
 
-<h3>Home Page</h3>
-
-<body>
+<section class="container">
+    <div class="row">
+    <div class="col s12">
+      <img
+        class="responsive-img"
+        src="{{ url_for('static', filename='images/NC-500.jpeg') }}"
+        alt="Image of a scotsman in a kilt"
+      />
+    </div>
+</div>
     <div class="container">
-        <h4>Title</h4>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus, dolore voluptate quibusdam 
-          eveniet tempora eum recusandae consequatur similique quasi, excepturi cupiditate. Qui necessitatibus 
-          quis veniam aut amet maiores iure id! 
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus, dolore voluptate quibusdam 
-          eveniet tempora eum recusandae consequatur similique quasi, excepturi cupiditate. Qui necessitatibus 
-          quis veniam aut amet maiores iure id!
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus, dolore voluptate quibusdam 
-          eveniet tempora eum recusandae consequatur similique quasi, excepturi cupiditate. Qui necessitatibus 
-          quis veniam aut amet maiores iure id!
-      </p>
       <h4>Title</h4>
       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus, dolore voluptate quibusdam 
           eveniet tempora eum recusandae consequatur similique quasi, excepturi cupiditate. Qui necessitatibus 
@@ -61,6 +57,6 @@
           quis veniam aut amet maiores iure id!
       </p>
     </div>
-  </body>
+</section>
 
 {% endblock %}
