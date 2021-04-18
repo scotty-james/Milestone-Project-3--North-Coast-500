@@ -15,14 +15,21 @@
     {{ form.csrf_token }}
     <p>
         {{ form.category_name.label }}<br>
-        {{ form.category_name(size=80) }}<br>
+        {{ form.category_name }}<br>
         {%  for error in form.category_name.errors %}
         <span style="color: red;">{{ error }}</span>
         {% endfor %}
     </p>
     <p>
+        {{ form.star_rating.label }}<br>
+        {{ form.star_rating }}<br>
+        {%  for error in form.star_rating.errors %}
+        <span style="color: red;">{{ error }}</span>
+        {% endfor %}
+    </p>
+    <p>
         {{ form.post_title.label }}<br>
-        {{ form.post_title(cols="120", rows="3") }}<br>
+        {{ form.post_title }}<br>
         {%  for error in form.post_title.errors %}
         <span style="color: red;">{{ error }}</span>
         {% endfor %}
@@ -31,7 +38,7 @@
         <div class="col-4">
             <p>
                 {{ form.post_description.label }}<br>
-                {{ form.post_description(size=80) }}<br>
+                {{ form.post_description }}<br>
                 {%  for error in form.post_description.errors %}
                 <span style="color: red;">{{ error }}</span>
                 {% endfor %}
@@ -40,7 +47,7 @@
         <div class="col-8">
             <p>
                 {{ form.image_url.label }}<br>
-                {{ form.image_url(size=80) }}<br>
+                {{ form.image_url }}<br>
                 {%  for error in form.image_url.errors %}
                 <span style="color: red;">{{ error }}</span>
                 {% endfor %}

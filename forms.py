@@ -19,6 +19,7 @@ class SigninForm(FlaskForm):
 
 class AddReviewForm(FlaskForm):
     category_name = StringField('Category', validators=[DataRequired()])
+    star_rating = SelectField('Star Rating', choices=[('5', '5 Star'),('4', '4 Stars'),('3', '3 Stars'),('2', '2 Stars'),('1', '1 Stars')])
     post_title = StringField('Title', validators=[DataRequired()])
     post_description = TextAreaField('Review', validators=[DataRequired()])
     image_url = StringField('Image Url', validators=[DataRequired()])
@@ -27,6 +28,7 @@ class AddReviewForm(FlaskForm):
 
 class EditReviewForm(FlaskForm):
     category_name = StringField('Category', validators=[DataRequired()])
+    star_rating = SelectField('Star Rating', choices=[('5', '5 Star'),('4', '4 Stars'),('3', '3 Stars'),('2', '2 Stars'),('1', '1 Stars')])
     post_title = StringField('Title', validators=[DataRequired()])
     post_description = TextAreaField('Review', validators=[DataRequired()])
     image_url = StringField('Image Url', validators=[DataRequired()])

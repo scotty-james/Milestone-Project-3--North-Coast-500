@@ -123,6 +123,7 @@ def add_post():
     if form.validate_on_submit():
         mongo.db.posts.insert_one({
             "category_name": request.form.get("category_name"),
+            "star_rating": request.form.get("star_rating"),
             "post_title": request.form.get("post_title"),
             "post_description": request.form.get("post_description"),
             "image_url": request.form.get("image_url"),
@@ -147,6 +148,7 @@ def edit_post(post_id):
         }, {
             '$set': {
                 "category_name": request.form.get("category_name"),
+                "star_rating": request.form.get("star_rating"),
                 "post_title": request.form.get("post_title"),
                 "post_description": request.form.get("post_description"),
                 "image_url": request.form.get("image_url"),
