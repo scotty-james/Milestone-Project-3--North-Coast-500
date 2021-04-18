@@ -31,3 +31,8 @@ class EditReviewForm(FlaskForm):
     post_description = TextAreaField('Review', validators=[DataRequired()])
     image_url = StringField('Image Url', validators=[DataRequired()])
     submit = SubmitField('Update Review')
+
+
+class DeleteForm(FlaskForm):
+    post_title = StringField('Title', validators=[DataRequired()])
+    submit = SubmitField('Delete')

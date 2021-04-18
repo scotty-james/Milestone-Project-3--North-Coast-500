@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Delete Review</h1>
+{% with messages = get_flashed_messages() %}
+{% if messages %}
+<ul>
+    {% for message in messages %}
+    <li class="alert-warning">{{ message }}</li>
+    {% endfor %}
+</ul>
+{% endif %}
+{% endwith %}
+<form action="" method="post" enctype="multipart/form-data">
+    {{ form.csrf_token }}
+    <p>
+        {{ form.post_title.label }}<br>
+        {{ form.post_title(cols="120", rows="3") }}<br>
+        {%  for error in form.post_title.errors %}
+        <span style="color: red;">{{ error }}</span>
+        {% endfor %}
+    </p>
+    <p>Are you sure? This will delete your review forever!</p>
+    <p>{{ form.submit(class="not-collapse btn black") }}</p>
+
+
+    <a href="{{ url_for('get_posts') }}" class="not-collapse btn black">Cancel</a>
+    </div>
+</form>
+{% endblock %}

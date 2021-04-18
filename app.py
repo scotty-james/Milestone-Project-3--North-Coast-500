@@ -5,7 +5,7 @@ from flask import (
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 from werkzeug.security import generate_password_hash, check_password_hash
-from forms import SignupForm, SigninForm, AddReviewForm, EditReviewForm
+from forms import SignupForm, SigninForm, AddReviewForm, EditReviewForm, DeleteForm
 if os.path.exists("env.py"):
     import env
 
@@ -155,6 +155,23 @@ def edit_post(post_id):
         })
         return redirect(url_for('get_posts', title='Review Updated'))
     return render_template('edit_post.html', post=post_db, form=form)
+
+
+@app.route('/delete_post/<post_id>', methods=['GET', 'POST'])
+def delete_post(post_id):
+    post_db = mongo.db.posts.find_one({'_id': ObjectId(post_id)})
+    if request.method == 'GET':
+        form = DeleteForm(data=post_db)
+        return render_template('delete_post.html', title="Delete post", form=form)
+    form = DeleteForm(request.form)
+    if form.validate_on_submit():
+        posts_db = mongo.db.posts
+        posts_db.delete_one({
+            '_id': ObjectId(post_id),
+        })
+        return redirect(url_for('get_posts', title='Review Deleted'))
+    return render_template('delete_post.html', title="delete review", form=form)
+
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
