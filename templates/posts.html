@@ -1,24 +1,23 @@
 {% extends "base.html" %}
 {% block content %}
 
-<h3>Trip Reviews</h3>
+<h4>Trip Reviews</h4>
 
 <!-- Collapsible Accordion-->
-
+<section class="container">
     <ul class="collapsible">
         {% for post in posts %}
         <li>
             <div class="row collapsible-header">
-                <div class="post-img col s12 m4">
+                <div class="post-img col s12 m3">
                     <img class="responsive-img" src="{{ post.image_url }}" alt="image of {{ post.post_title }}" />
                 </div>
 
-                <div class="col s12 m7">
+                <div class="col s12 m7 review">
                     <h5></i>{{ post.post_title }}</h5>
                     <h5></i>{{ post.category_name }}</h5>
-                    <h5></i>{{ post.star_rating }}</h5>
-                     <!--Takes user rating string and converts/displays star(s)-->
-                     <div class="review">
+                    <!--Takes user rating string and converts/displays star(s)-->
+                    <div class="review">
                         {% if post.star_rating == "5" %}
                         <h4 class="fas fa-star"></h4>
                         <h4 class="fas fa-star"></h4>
@@ -41,12 +40,17 @@
                         <h4 class="fas fa-star"></h4>
                         </h4>
                         {% endif %}
-                        <p><em>Posted by {{ post.created_by }} | {{ post.review_date }}</em></p>
+                    </div>
+                    <p><em>Posted by {{ post.created_by }} on {{ post.review_date }}</em></p>
                 </div>
 
-                <a href="{{ url_for('delete_post', post_id=post._id) }}" class="not-collapse btn black">Delete Review </a>
-                <a href="{{ url_for('edit_post', post_id=post._id) }}" class="not-collapse btn black">Update Review</a>
+                <div class="col s12 m2 not-collapse left-align">
 
+                    {% if session.user|lower == post.created_by|lower %}
+                    <a href="{{ url_for('delete_post', post_id=post._id) }}" class="not-collapse btn black">Delete Review</a>
+                    <a href="{{ url_for('edit_post', post_id=post._id) }}" class="not-collapse btn black">Update Review</a>
+                    {% endif %}
+                </div>
             </div>
 
             <div class="col s9"></div>

@@ -14,22 +14,19 @@
     {{ form.csrf_token }}
     <p>
         {{ form.username.label }}<br>
-        {{ form.username(size=32) }}<br>
+        {{ form.username }}<br>
         {% for error in form.username.errors %}
         <span style="color: red;">{{ error }}</span>
         {% endfor %}
     </p>
     <p>
         {{ form.password.label }}<br>
-        {{ form.password(size=32) }}<br>
+        {{ form.password }}<br>
         {% for error in form.password.errors %}
         <span style="color: red;">{{ error }}</span>
         {% endfor %}
     </p>
-    <p>
-        {{ form.remember_me() }} {{ form.remember_me.label }}
-    </p>
     <p>{{ form.submit(class="not-collapse btn black") }}</p>
 </form>
-<p>Not registered? Then please <a href="{{ url_for('register') }}">register here</a></p>
+<p>Not registered? Then please <a href="{{ url_for('register') }}">sign up here</a></p>
 {% endblock %}
