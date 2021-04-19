@@ -6,3 +6,5 @@ $(".collapsible").collapsible();
 $("select").formSelect();
 
 
+
+

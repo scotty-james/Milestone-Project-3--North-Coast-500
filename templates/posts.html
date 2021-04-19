@@ -1,23 +1,23 @@
 {% extends "base.html" %}
 {% block content %}
 
-<h4>Trip Reviews</h4>
-
-<!-- Collapsible Accordion-->
-<section class="container">
-    <ul class="collapsible">
+<h4 class="center-align">Trip Reviews</h4>
+<p class="center-align">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure animi cumque consectetur repudiandae quidem, 
+    vero at qui dolores maxime voluptatum impedit illo reprehenderit quibusdam distinctio est ducimus, alias tenetur odio.</p>
+<hr>
+    <br>
         {% for post in posts %}
-        <li>
-            <div class="row collapsible-header">
-                <div class="post-img col s12 m3">
+        <div class="row card-content">
+            <div class="col s12">
+                <div class="row">
+                <div class="col s6 offset-s3 m4 l3">
                     <img class="responsive-img" src="{{ post.image_url }}" alt="image of {{ post.post_title }}" />
+                    <p><em>{{ post.created_by }} posted a review on {{ post.review_date }}</em></p>
                 </div>
-
-                <div class="col s12 m7 review">
+                <div class="col s12 m8 l9">
                     <h5></i>{{ post.post_title }}</h5>
-                    <h5></i>{{ post.category_name }}</h5>
                     <!--Takes user rating string and converts/displays star(s)-->
-                    <div class="review">
+                    <div class="star">
                         {% if post.star_rating == "5" %}
                         <h4 class="fas fa-star"></h4>
                         <h4 class="fas fa-star"></h4>
@@ -29,38 +29,39 @@
                         <h4 class="fas fa-star"></h4>
                         <h4 class="fas fa-star"></h4>
                         <h4 class="fas fa-star"></h4>
+                        <h4 class="far fa-star"></h4>
                         {% elif post.star_rating == "3" %}
                         <h4 class="fas fa-star"></h4>
                         <h4 class="fas fa-star"></h4>
                         <h4 class="fas fa-star"></h4>
+                        <h4 class="far fa-star"></h4>
+                        <h4 class="far fa-star"></h4>
                         {% elif post.star_rating == "2" %}
                         <h4 class="fas fa-star"></h4>
                         <h4 class="fas fa-star"></h4>
+                        <h4 class="far fa-star"></h4>
+                        <h4 class="far fa-star"></h4>
+                        <h4 class="far fa-star"></h4>
                         {% elif post.star_rating == "1" %}
                         <h4 class="fas fa-star"></h4>
+                        <h4 class="far fa-star"></h4>
+                        <h4 class="far fa-star"></h4>
+                        <h4 class="far fa-star"></h4>
+                        <h4 class="far fa-star"></h4>
                         </h4>
                         {% endif %}
                     </div>
-                    <p><em>Posted by {{ post.created_by }} on {{ post.review_date }}</em></p>
-                </div>
-
-                <div class="col s12 m2 not-collapse left-align">
-
+                    <p>{{ post.post_description }}</p>
                     {% if session.user|lower == post.created_by|lower %}
                     <a href="{{ url_for('delete_post', post_id=post._id) }}" class="not-collapse btn black">Delete Review</a>
                     <a href="{{ url_for('edit_post', post_id=post._id) }}" class="not-collapse btn black">Update Review</a>
                     {% endif %}
                 </div>
             </div>
-
-            <div class="col s9"></div>
-            <div class="collapsible-body">
-                <p>{{ post.post_description }}</p>
-            </div>
-        </li>
+        </div>
+    </div>
+    <hr>
+    <br>
         {% endfor %}
-    </ul>
-</section>
-
 
 {% endblock %}
