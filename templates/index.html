@@ -1,62 +1,51 @@
 {% extends "base.html" %}
 {% block content %}
 
-<section class="container">
-    <div class="row">
-    <div class="col s12">
-      <img
+<!-- Page Header -->
+<div class="center-align">
+      <h1>North Coast 500</h1>
+      <p>Your guide to Scotland's EPIC Road Trip!</p>
+</div>
+
+<!-- Main Homepage Image -->
+<section class="row">
+  <div class="col m8 s12 hero-image">
+    <img
+      class="responsive-img"
+      src="{{ url_for('static', filename='images/NC-500.jpeg') }}"
+      alt="Image of xxx"
+    />
+    <div class="hero-image-text left-align">
+      <h1>Dive straight in and read reviews from those who have explored the path</h1>
+      <a
+        href="{{ url_for('get_posts') }}"
+        class="btn black"
+        >Read Reviews</a
+      >
+    </div>
+  </div>
+
+  <!-- Side Image - top -->
+  <aside class="col m4 s6 side-image-top">
+    <a href="{{ url_for('get_posts') }}"
+      ><img
         class="responsive-img"
         src="{{ url_for('static', filename='images/NC-500.jpeg') }}"
-        alt="Image of a scotsman in a kilt"
+        alt="Image of xxx"
       />
-    </div>
-</div>
-    <div class="container">
-      <h4>Title</h4>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus, dolore voluptate quibusdam 
-          eveniet tempora eum recusandae consequatur similique quasi, excepturi cupiditate. Qui necessitatibus 
-          quis veniam aut amet maiores iure id! 
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus, dolore voluptate quibusdam 
-          eveniet tempora eum recusandae consequatur similique quasi, excepturi cupiditate. Qui necessitatibus 
-          quis veniam aut amet maiores iure id!
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus, dolore voluptate quibusdam 
-          eveniet tempora eum recusandae consequatur similique quasi, excepturi cupiditate. Qui necessitatibus 
-          quis veniam aut amet maiores iure id!
-      </p>
-      <h4>Title</h4>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus, dolore voluptate quibusdam 
-          eveniet tempora eum recusandae consequatur similique quasi, excepturi cupiditate. Qui necessitatibus 
-          quis veniam aut amet maiores iure id! 
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus, dolore voluptate quibusdam 
-          eveniet tempora eum recusandae consequatur similique quasi, excepturi cupiditate. Qui necessitatibus 
-          quis veniam aut amet maiores iure id!
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus, dolore voluptate quibusdam 
-          eveniet tempora eum recusandae consequatur similique quasi, excepturi cupiditate. Qui necessitatibus 
-          quis veniam aut amet maiores iure id!
-      </p>
-      <h4>Title</h4>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus, dolore voluptate quibusdam 
-          eveniet tempora eum recusandae consequatur similique quasi, excepturi cupiditate. Qui necessitatibus 
-          quis veniam aut amet maiores iure id! 
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus, dolore voluptate quibusdam 
-          eveniet tempora eum recusandae consequatur similique quasi, excepturi cupiditate. Qui necessitatibus 
-          quis veniam aut amet maiores iure id!
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus, dolore voluptate quibusdam 
-          eveniet tempora eum recusandae consequatur similique quasi, excepturi cupiditate. Qui necessitatibus 
-          quis veniam aut amet maiores iure id!
-      </p>
-      <h4>Title</h4>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus, dolore voluptate quibusdam 
-          eveniet tempora eum recusandae consequatur similique quasi, excepturi cupiditate. Qui necessitatibus 
-          quis veniam aut amet maiores iure id! 
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus, dolore voluptate quibusdam 
-          eveniet tempora eum recusandae consequatur similique quasi, excepturi cupiditate. Qui necessitatibus 
-          quis veniam aut amet maiores iure id!
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus, dolore voluptate quibusdam 
-          eveniet tempora eum recusandae consequatur similique quasi, excepturi cupiditate. Qui necessitatibus 
-          quis veniam aut amet maiores iure id!
-      </p>
-    </div>
-</section>
+      <div class="side-image-txt center-align">
+        <h3>Add your own review</h3>
+        <a href="{{ url_for('login') }}"
+      >
+      </div>
+    </a>
+  </aside>
+
+  <!-- Side Image - bottom -->
+  <aside class="col m4 s6 side-image-top side-image-btm">
+      <img
+        class="responsive-img" src="{{ url_for('static', filename='images/NC-500.jpeg') }}" alt="Image of xxx"
+      />
+  </aside>
 
 {% endblock %}
