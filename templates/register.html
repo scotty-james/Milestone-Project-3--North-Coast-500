@@ -1,32 +1,26 @@
 {% extends "base.html" %}
 {% block content %}
-<h1>Register</h1>
+<h1 class="form-heading center-align">Sign Up</h1>
 {% with messages = get_flashed_messages() %}
-{% if messages %}
-<ul>
-    {% for message in messages %}
-    <li class="alert-warning">{{ message }}</li>
-    {% endfor %}
-</ul>
-{% endif %}
 {% endwith %}
-<form action="" method="post">
+
+<form class="signup-form" action="" method="post">
     {{ form.csrf_token }}
     <p>
-        {{ form.username.label }}<br>
-        {{ form.username }}<br>
+        {{ form.username.label(class="form-label") }}<br>
+        {{ form.username(class="form-label") }}<br>
         {% for error in form.username.errors %}
         <span style="color: red;">{{ error }}</span>
         {% endfor %}
     </p>
     <p>
-        {{ form.password.label }}<br>
-        {{ form.password }}<br>
+        {{ form.password.label(class="form-label") }}<br>
+        {{ form.password(class="form-label") }}<br>
         {% for error in form.password.errors %}
         <span style="color: red;">{{ error }}</span>
         {% endfor %}
     </p>
-    <p>{{ form.submit(class="not-collapse btn black") }}</p>
+    <p>{{ form.submit(class="btn center-align") }}</p>
 </form>
-<p>Have an account? Then please <a href="{{ url_for('register') }}">sign in here</a></p>
+<p class="center-align">Have an account? Then <a href="{{ url_for('login') }}">sign in here</a></p>
 {% endblock %}

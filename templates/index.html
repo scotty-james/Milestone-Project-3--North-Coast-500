@@ -19,7 +19,7 @@
       <h1>Dive straight in and read reviews from those who have explored the path</h1>
       <a
         href="{{ url_for('get_posts') }}"
-        class="btn black"
+        class="btn"
         >Read Reviews</a
       >
     </div>
@@ -47,14 +47,16 @@
         class="responsive-img" src="{{ url_for('static', filename='images/NC-500.jpeg') }}" alt="Image of xxx"
       />
   </aside>
+  </section>
 
-  <div class="center-align">
-    <h1>North Coast 500</h1>
+  <section class="center-align">
+    <h2>North Coast 500</h2>
     <p>Your guide to Scotland's EPIC Road Trip!</p>
     <hr>
-</div>
+  </section>
+
   
-  <section>
+  <section class="row">
       <img
         class="col s12 m4 side-image-top side-image-btm" src="{{ url_for('static', filename='images/NC-500.jpeg') }}" alt="Image of xxx"/>
         <img
@@ -79,8 +81,6 @@
             </div>
           </div>
         </div>
-        </section>
-        <section>
           <img
             class="col s12 m6 side-image-top side-image-btm" src="{{ url_for('static', filename='images/NC-500.jpeg') }}" alt="Image of xxx"/>
             <img
@@ -103,8 +103,6 @@
                 </div>
               </div>
             </div>
-            </section>
-            <section>
               <img
               class="col s12 m4 side-image-top side-image-btm" src="{{ url_for('static', filename='images/NC-500.jpeg') }}" alt="Image of xxx"/>
               <img
@@ -129,8 +127,6 @@
                     </div>
                   </div>
                 </div>
-                </section>
-                <section>
                   <img
                     class="col s12 m6 side-image-top side-image-btm" src="{{ url_for('static', filename='images/NC-500.jpeg') }}" alt="Image of xxx"/>
                     <img
@@ -154,7 +150,6 @@
                       </div>
                     </div>
                     </section>
-      </section>
       
 
 {% endblock %}
