@@ -10,14 +10,14 @@
         <div class="row card-content">
             <div class="col s12">
                 <div class="row">
-                <div class="col s6 offset-s3 m4 l3">
+                <div class="col s12 m4 l3 center-align review-image">
                     <img class="responsive-img" src="{{ post.image_url }}" alt="image of {{ post.post_title }}" />
                     <p><em>{{ post.created_by }} posted a review on {{ post.review_date }}</em></p>
                 </div>
-                <div class="col s12 m8 l9">
+                <div class="col s12 m8 l9 review-content">
                     <h5></i>{{ post.post_title }}</h5>
                     <!--Takes user rating string and converts/displays star(s)-->
-                    <div class="star">
+                    <div class="review-content">
                         {% if post.star_rating == "5" %}
                         <h4 class="fas fa-star"></h4>
                         <h4 class="fas fa-star"></h4>
