@@ -149,8 +149,22 @@ p {
 
 /*-------------------------------------------Reviews Page*/
 
-.review-content {
+.review-image {
+  position: relative;
   text-align: center;
+  margin-top: 20px;
+}
+
+.review-content h4 {
+  font-size: 1.75rem;
+}
+
+.review-content h4.fas {
+  color: gold;
+}
+
+.review-content h4.far {
+  color: gold;
 }
 
 /*-------------------------------------------Media Queries*/
@@ -189,6 +203,10 @@ p {
 
   .side-image-txt h3 {
     font-size: 0.9rem;
+  }
+
+  .review-content {
+    text-align: center;
   }
 
 }
