@@ -10,7 +10,7 @@
 </ul>
 {% endif %}
 {% endwith %}
-<form action="" method="post" enctype="multipart/form-data">
+<form class="edit-form" action="" method="post" enctype="multipart/form-data">
     <div class="card-panel form-panel">
     {{ form.csrf_token }}
     <p>
@@ -36,7 +36,7 @@
     </p>
     <p>
         {{ form.post_description.label(class="form-label") }}<br>
-        {{ form.post_description(class="form-label") }}<br>
+        {{ form.post_description }}<br>
         {%  for error in form.post_description.errors %}
         <span style="color: red;">{{ error }}</span>
         {% endfor %}

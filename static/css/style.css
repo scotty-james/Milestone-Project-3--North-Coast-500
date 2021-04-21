@@ -206,6 +206,11 @@ label.form-label {
   margin-top: 0;
 }
 
+.card-panel {
+  padding: 1rem;
+  margin-bottom: 5rem;
+}
+
 #username {
   background: rgb(255, 255, 255);
   border: 1px solid rgba(184, 178, 178, 0.986);
@@ -216,8 +221,18 @@ background: rgb(255, 255, 255);
 border: 1px solid rgba(184, 178, 178, 0.986);
 }
 
-#post-description {
-  font-size: .75rem;
+/*-------------------------------------------Add/Edit Forms*/
+
+.edit-form {
+  margin: auto;
+  padding: 0 20rem 2.5rem 20rem;
+  align-content: center;
+}
+
+.add-form {
+  margin: auto;
+  padding: 0 20rem 2.5rem 20rem;
+  align-content: center;
 }
 
 .form-heading {
@@ -232,6 +247,27 @@ border: 1px solid rgba(184, 178, 178, 0.986);
 .form-panel {
   margin: 0;
 }
+
+button, input, optgroup, select, textarea {
+  font-family: "Open Sans", serif;
+  color: #000000;
+  font-size: 1.5rem;
+}
+
+/*-------------------------------------------Delete Form*/
+
+#post-title {
+  font-size: 2rem;
+}
+
+/*-------------------------------------------Footer*/
+
+.footer {
+  margin-top: 50rem;
+}
+
+
+
 
 /*-------------------------------------------Media Queries*/
 
@@ -283,6 +319,18 @@ border: 1px solid rgba(184, 178, 178, 0.986);
   .signup-form {
     margin: auto;
     padding: 0 2rem 0 2rem;
+    align-content: center;
+  }
+
+  .edit-form {
+    margin: auto;
+    padding: 0 2rem 1rem 2rem;
+    align-content: center;
+  }
+
+  .add-form {
+    margin: auto;
+    padding: 0 2rem 1rem 2rem;
     align-content: center;
   }
 }

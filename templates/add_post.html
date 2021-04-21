@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% block content %}
-<h1 class="left-align form-heading">Add Review</h1>
+<h1 class="center-align form-heading">Add Review</h1>
 {% with messages = get_flashed_messages() %}
 {% if messages %}
 <ul>
@@ -10,7 +10,7 @@
 </ul>
 {% endif %}
 {% endwith %}
-<form action="" method="post" enctype="multipart/form-data">
+<form class="add-form" action="" method="post" enctype="multipart/form-data">
     <div class="card-panel form-panel">
     {{ form.csrf_token }}
     <h3>
