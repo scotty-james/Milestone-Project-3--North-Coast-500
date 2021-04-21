@@ -5,7 +5,7 @@
 <div class="center-align">
       <h1>North Coast 500</h1>
       <p>Your guide to Scotland's EPIC Road Trip!</p>
-</div>
+</div> 
 
 <!-- Hero Image -->
 <section class="row">
@@ -15,7 +15,7 @@
       src="{{ url_for('static', filename='images/NC-500.jpeg') }}"
       alt="Image of xxx"
     />
-    <div class="hero-image-text left-align">
+    <div class="hero-image-text center-align">
       <h1>Dive straight in and read reviews from those who have explored the path</h1>
       <a
         href="{{ url_for('get_posts') }}"
@@ -26,13 +26,12 @@
   </div>
 
   <!-- Side Image - top -->
-  <aside class="col m4 s6 side-image-top">
-    <a href="{{ url_for('get_posts') }}"
-      ><img
+  <aside class="col m4 s6 side-image-top responsive-image">
+    <a href="{{ url_for('get_posts') }}">
+      <img
         class="responsive-img"
         src="{{ url_for('static', filename='images/NC-500.jpeg') }}"
-        alt="Image of xxx"
-      />
+        alt="Image of xxx"/>
       <div class="side-image-txt center-align">
         <h3>Add your own review</h3>
         <a href="{{ url_for('login') }}"

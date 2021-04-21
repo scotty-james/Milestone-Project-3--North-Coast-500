@@ -8,19 +8,19 @@
 	font-size: 10px;
 }
 
+
 /*-------------------------------------------General*/
 
 .container {
   width: 95%;
 }
 
-html, 
+html,  
 body {
   display: flex;
-  min-height: 100vh;
   flex-direction: column;
   width: 100%;
-  margin: 0;
+  margin: 0 auto;
   padding: 0;
   font-family: "Open Sans", sans-serif;
   box-sizing: border-box;
@@ -64,12 +64,12 @@ p {
   font-size: 1.3rem;
 }
 
-a {
-  font-size: 1.3rem;
-}
-
 em {
   font-size: 1rem;
+}
+
+a {
+  font-size: 1.3rem;
 }
 
 .btn {
@@ -96,13 +96,14 @@ em {
 
 .hero-image-text {
   position: absolute;
-  top: 8px;
-  left: 15px;
+  top: 15px; 
+  left: 30px; 
   margin-left: 20px;
   margin-top: 20px;
-  margin-right: 70px;
+  margin-right: 60px;
   background-color: rgba(255, 255, 255, 0.5);
   padding: 10px 20px;
+  align-content: center;
 }
 
 .hero-image-text h1 {
@@ -193,9 +194,16 @@ em {
   margin-bottom: 1.25rem;
 }
 
+label.form-label {
+  margin: 0;
+  padding: 0rem;
+}
+
 .form-label {
   font-size: 1.25rem;
   background: rgb(255, 255, 255);
+  padding-top: 0;
+  margin-top: 0;
 }
 
 #username {
@@ -206,6 +214,23 @@ em {
 #password {
 background: rgb(255, 255, 255);
 border: 1px solid rgba(184, 178, 178, 0.986);
+}
+
+#post-description {
+  font-size: .75rem;
+}
+
+.form-heading {
+  margin-top: 1rem;
+}
+
+.select-dropdown li span {
+  font-size: 1rem;
+  color: #000000;
+}
+
+.form-panel {
+  margin: 0;
 }
 
 /*-------------------------------------------Media Queries*/
@@ -261,4 +286,9 @@ border: 1px solid rgba(184, 178, 178, 0.986);
     align-content: center;
   }
 }
+
+
+
+
+
 

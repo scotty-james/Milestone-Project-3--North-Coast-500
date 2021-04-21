@@ -16,20 +16,20 @@ class SigninForm(FlaskForm):
 
 
 class AddReviewForm(FlaskForm):
-    category_name = StringField('Category', validators=[DataRequired()])
-    star_rating = SelectField('Star Rating', choices=[('5', '5 Star'),('4', '4 Stars'),('3', '3 Stars'),('2', '2 Stars'),('1', '1 Stars')])
-    post_title = StringField('Title', validators=[DataRequired()])
-    post_description = TextAreaField('Review', validators=[DataRequired()])
-    image_url = StringField('Image Url', validators=[DataRequired()])
-    submit = SubmitField('Add Review')
+    category_name = SelectField('Route', choices=[('1', 'North Coast 500')])
+    star_rating = SelectField('Rate Your Experience', choices=[('5', '5 Star'),('4', '4 Stars'),('3', '3 Stars'),('2', '2 Stars'),('1', '1 Stars')])
+    post_title = StringField('Give your review a title', validators=[DataRequired()])
+    post_description = TextAreaField('Write about your experience', validators=[DataRequired()])
+    image_url = StringField('Post an image (past in the url)', validators=[DataRequired()])
+    submit = SubmitField('Submit Review')
 
 
 class EditReviewForm(FlaskForm):
-    category_name = StringField('Category', validators=[DataRequired()])
-    star_rating = SelectField('Star Rating', choices=[('5', '5 Star'),('4', '4 Stars'),('3', '3 Stars'),('2', '2 Stars'),('1', '1 Stars')])
-    post_title = StringField('Title', validators=[DataRequired()])
-    post_description = TextAreaField('Review', validators=[DataRequired()])
-    image_url = StringField('Image Url', validators=[DataRequired()])
+    category_name = SelectField('Route', choices=[('1', 'North Coast 500')])
+    star_rating = SelectField('Rate Your Experience', choices=[('5', '5 Star'),('4', '4 Stars'),('3', '3 Stars'),('2', '2 Stars'),('1', '1 Stars')])
+    post_title = StringField('Give your review a title', validators=[DataRequired()])
+    post_description = TextAreaField('Write about your experience', validators=[DataRequired()])
+    image_url = StringField('Post an image (past in the url)', validators=[DataRequired()])
     submit = SubmitField('Update Review')
 
 
