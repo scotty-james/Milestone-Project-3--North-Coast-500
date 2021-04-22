@@ -27,7 +27,7 @@
                 <li><a href="{{ url_for('add_post') }}"class="btn">Add Review</a></li>
                 <li><a href="{{ url_for('logout') }}">Sign Out</a></li>
                 {% else %}
-                <li><a href="{{ url_for('login') }}">Add Review</a></li>
+                <li><a  class="waves-effect waves-light modal-trigger" href="#modal1">Add Review</a></li>
                 <li><a href="{{ url_for('register') }}">Sign Up</a></li>
 				<li><a href="{{ url_for('login') }}" class="btn">Sign In</a></li>
                 {% endif %}
@@ -65,6 +65,19 @@
         {% endif %}
         {% endwith %}
     </section>
+
+    <!-- Modal Trigger -->
+
+ <!-- Modal Structure -->
+ <div id="modal1" class="modal">
+  <div class="modal-content">
+    <h4>Modal Header</h4>
+    <p>A bunch of text</p>
+  </div>
+  <div class="modal-footer">
+    <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
+  </div>
+</div>
 
 
     <main class="container">

@@ -5,6 +5,10 @@ $(document).ready(function () {
 $(".collapsible").collapsible();
 $("select").formSelect();
 
+$(document).ready(function(){
+    $('.modal').modal();
+  });
+
 
 
 
