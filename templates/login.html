@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
 
+
 <h1 class="form-heading center-align" >Sign In</h1>
 {% with messages = get_flashed_messages() %}
 {% endwith %}
@@ -24,4 +25,5 @@
     <p>{{ form.submit(class="btn center-align") }}</p>
 </form>
 <p class="center-align">Not registered? Then <a href="{{ url_for('register') }}">sign up here</a></p>
+
 {% endblock %}

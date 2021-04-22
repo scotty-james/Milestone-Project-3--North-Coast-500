@@ -166,7 +166,7 @@ a {
 /*-------------------------------------------Sign Up/In Forms*/
 
 .signup-form {
-  margin: auto;
+  margin: 2.5rem 15rem 2.5rem 15rem;;
   padding: 0 20rem 0 20rem;
   align-content: center;
 }
@@ -224,13 +224,13 @@ border: 1px solid rgba(184, 178, 178, 0.986);
 /*-------------------------------------------Add/Edit Forms*/
 
 .edit-form {
-  margin: auto;
+  margin: 0 15rem 2.5rem 15rem;;
   padding: 0 20rem 2.5rem 20rem;
   align-content: center;
 }
 
 .add-form {
-  margin: auto;
+  margin: 0 15rem 2.5rem 15rem;;
   padding: 0 20rem 2.5rem 20rem;
   align-content: center;
 }
@@ -252,6 +252,10 @@ button, input, optgroup, select, textarea {
   font-family: "Open Sans", serif;
   color: #000000;
   font-size: 1.5rem;
+}
+
+#post_description {
+  font-size: 1.1rem;
 }
 
 /*-------------------------------------------Delete Form*/
@@ -281,7 +285,7 @@ button, input, optgroup, select, textarea {
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width:600px) {
   .hero-image {
     margin-top: 30px;
     margin-bottom: 0px;
@@ -335,8 +339,22 @@ button, input, optgroup, select, textarea {
   }
 }
 
+@media only screen and (max-width: 1024px) {
+  .signup-form {
+    margin: auto;
+    padding: 0 2rem 0 2rem;
+    align-content: center;
+  }
 
+  .edit-form {
+    margin: auto;
+    padding: 0 3rem 1rem 3rem;
+    align-content: center;
+  }
 
-
-
-
+  .add-form {
+    margin: auto;
+    padding: 0 5rem 1rem 5rem;
+    align-content: center;
+  }
+  }
