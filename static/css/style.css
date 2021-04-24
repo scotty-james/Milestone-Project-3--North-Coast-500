@@ -8,12 +8,12 @@
 	font-size: 10px;
 }
 
-
-/*-------------------------------------------General*/
-
 .container {
   width: 95%;
 }
+
+
+/*-------------------------------------------General*/
 
 html,  
 body {
@@ -73,17 +73,31 @@ a {
 }
 
 .btn {
-  color: rgb(0, 0, 0);
-  background-color: rgb(255, 255, 255);
+  color: white;
+  background-color: #0065BF;
   border-radius: 5;
   border: 1px solid black;
 }
 
+.btn:hover {
+  background-color: black;
+  color: white;
+}
+
 /*-------------------------------------------NavBar*/
 
-.brand-logo {
+.brand-logo a {
   padding: 0;
   margin-left: 2rem;
+  color: black;
+}
+
+.nav-extended {
+  background-color: white;
+}
+
+.nav-wrapper ul a {
+  color: black;
 }
 
 /*-------------------------------------------Home Page*/
@@ -124,8 +138,8 @@ a {
 
 .side-image-txt {
   position: absolute;
-  top: 50%;
-  left: 50%;
+  top: 70%;
+  left: 90%;
   transform: translate(-50%, -50%);
   background-color: rgba(255, 255, 255, 0.9);
 }
@@ -178,20 +192,30 @@ a {
 
 #submit {
   color: rgb(0, 0, 0);
-  background-color: rgb(255, 255, 255);
+  background-color: #0065BF;
   border-radius: 5px;
   width: 100%;
   border: 1px solid black;
   margin-top: 1.25rem;
 }
 
+#submit:hover {
+  background-color: black;
+  color: white;
+}
+
 #cancel-submit {
   color: rgb(0, 0, 0);
-  background-color: rgb(255, 255, 255);
+  background-color: #0065BF;
   border-radius: 5px;
   width: 100%;
   border: 1px solid black;
   margin-bottom: 1.25rem;
+}
+
+#canccel-submit:hover {
+  background-color: black;
+  color: white;
 }
 
 label.form-label {
@@ -201,7 +225,6 @@ label.form-label {
 
 .form-label {
   font-size: 1.25rem;
-  background: rgb(255, 255, 255);
   padding-top: 0;
   margin-top: 0;
 }
@@ -212,12 +235,10 @@ label.form-label {
 }
 
 #username {
-  background: rgb(255, 255, 255);
   border: 1px solid rgba(184, 178, 178, 0.986);
 }
 
 #password {
-background: rgb(255, 255, 255);
 border: 1px solid rgba(184, 178, 178, 0.986);
 }
 
@@ -386,7 +407,7 @@ button, input, optgroup, select, textarea {
 
   .add-form {
     margin: auto;
-    padding: 0 5rem 1rem 5rem;
+    padding: 0 3rem 1rem 3rem;
     align-content: center;
   }
   }
