@@ -276,6 +276,28 @@ button, input, optgroup, select, textarea {
   margin-top: 50rem;
 }
 
+.social-links {
+	padding: 1rem;
+	padding-top: 0;
+}
+
+.social-links li a i {
+	width: 2rem;
+	height: 2rem;
+	padding: 1.1rem 0;
+	border-radius: 50%;
+	font-size: 2rem;
+	line-height: 1.5rem;
+	color: #ffffff;
+}
+
+.footer-copyright {
+  padding-top: 0;
+  margin: 0;
+}
+
+
+
 
 
 
@@ -342,6 +364,10 @@ button, input, optgroup, select, textarea {
     margin: auto;
     padding: 0 2rem 1rem 2rem;
     align-content: center;
+  }
+
+  .page-footer {
+    text-align: center;
   }
 }
 
