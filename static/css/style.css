@@ -264,6 +264,12 @@ button, input, optgroup, select, textarea {
   font-size: 2rem;
 }
 
+.delete-form {
+  margin: 0 15rem 2.5rem 15rem;;
+  padding: 0 20rem 2.5rem 20rem;
+  align-content: center;
+}
+
 /*-------------------------------------------Footer*/
 
 .footer {
