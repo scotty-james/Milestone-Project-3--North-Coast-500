@@ -312,6 +312,10 @@ button, input, optgroup, select, textarea {
 	color: #ffffff;
 }
 
+.list-inline-item {
+  display: inline-block;
+}
+
 .footer-copyright {
   padding-top: 0;
   margin: 0;
