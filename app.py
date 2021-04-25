@@ -71,7 +71,7 @@ def login():
 
     if form.validate_on_submit():
         # checks database to see if username exists
-        existing_user = mongo.db.users.find_one(
+        existing_user = mongo.db.users.find_one_or_404(
             {"username": request.form.get("username").lower()})
 
         if existing_user:
@@ -98,7 +98,7 @@ def login():
 
 @app.route("/profile/<username>", methods=["GET", "POST"])
 def profile(username):
-    username = mongo.db.users.find_one(
+    username = mongo.db.users.find_one_or_404(
         {"username": session["user"]})["username"]
 
     if session["user"]:
@@ -168,7 +168,7 @@ def edit_post(post_id):
 
 @app.route('/delete_post/<post_id>', methods=['GET', 'POST'])
 def delete_post(post_id):
-    post_db = mongo.db.posts.find_one({'_id': ObjectId(post_id)})
+    post_db = mongo.db.posts.find_one_or_404({'_id': ObjectId(post_id)})
     if request.method == 'GET':
         form = DeleteForm(data=post_db)
         return render_template('delete_post.html', title="Delete post", form=form)
@@ -182,7 +182,13 @@ def delete_post(post_id):
     return render_template('delete_post.html', title="delete review", form=form)
 
 
+@app.errorhandler(404)
+def page_not_found(e):
+    return render_template('404.html'), 404
+
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
-            debug=True)
+            debug=False)
