@@ -9,9 +9,8 @@
 }
 
 .container {
-  width: 95%;
+  width: 100%;
 }
-
 
 /*-------------------------------------------General*/
 
@@ -86,14 +85,24 @@ a {
 
 .uppercase {
   text-transform: uppercase;
+	font-size: 2rem;
+    margin-top: 1.5rem;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.flashes {
+  background-color: #89b4da;
 }
 
 /*-------------------------------------------NavBar*/
+
 
 .brand-logo a {
   padding: 0;
   margin-left: 2rem;
   color: white;
+  font-size: 1rem !important;
 }
 
 .nav-extended {
@@ -104,23 +113,27 @@ a {
   color: white;
 }
 
+nav .brand-logo {
+  padding-left: 1rem;
+}
+
 /*-------------------------------------------Home Page*/
 
 .hero-image {
   position: relative;
   text-align: center;
-  margin-top: 2rem;
+  margin-top: 20px;
 }
 
 .hero-image-text {
   position: absolute;
   top: 1.5rem; 
-  left: 3rem; 
-  margin-left: 2rem;
-  margin-top: 2rem;
-  margin-right: 6rem;
+  left: 2.8rem; 
+  margin-left: 1.5rem;
+  margin-top: 1rem;
+  margin-right: 4rem;
   background-color: rgba(255, 255, 255, 0.5);
-  padding: 1rem 2rem;
+  padding: .5rem 1.5rem;
   align-content: center;
 }
 
@@ -137,6 +150,10 @@ a {
 .side-image-top {
   position: relative;
   text-align: center;
+  margin-top: 1.5rem;
+}
+
+.side-image-btm {
   margin-top: 1.5rem;
 }
 
@@ -216,7 +233,7 @@ label.form-label {
 
 .card-panel {
   padding: 1rem;
-  margin-bottom: 5rem;
+  margin-bottom: 1rem;
 }
 
 #username {
@@ -274,10 +291,10 @@ button, input, optgroup, select, textarea {
 
 .page-footer {
   background-color: #0065BF;
+  padding-top: 0;
 }
 
 .social-links {
-	padding: 1rem;
 	padding-top: 0;
 }
 
@@ -300,22 +317,8 @@ button, input, optgroup, select, textarea {
   margin: 0;
 }
 
-
-
-
-
-
 /*-------------------------------------------Media Queries*/
 
-@media only screen and (max-width: 600px) {
-  .side-image-btm {
-    margin-top: 15px;
-  }
-
-  .flashes h3 {
-      line-height: 2;
-  }
-}
 
 @media only screen and (max-width:600px) {
   .hero-image {
@@ -323,9 +326,8 @@ button, input, optgroup, select, textarea {
     margin-bottom: 0px;
   }
 
-  .side-image {
-    margin-top: 30px;
-    margin-bottom: 0px;
+  .side-image-btm {
+    margin-top: 1.5rem;
   }
 
   .hero-image-text h1 {
@@ -339,17 +341,21 @@ button, input, optgroup, select, textarea {
     margin-bottom: 10px;
   }
 
-  .side-image-txt h3 {
-    font-size: 0.9rem;
-  }
-
   .review-content {
     text-align: center;
   }
 
-  .brand-logo {
+  .brand-logo a {
     padding: 0;
     margin: 0;
+  }
+
+  nav .brand-logo {
+    position: absolute;
+    color: #fff;
+    display: inline-block;
+    font-size: 1.5rem;
+    padding: 0;
   }
 
   .signup-form {
@@ -358,19 +364,18 @@ button, input, optgroup, select, textarea {
     align-content: center;
   }
 
-  .edit-form {
-    margin: auto;
-    padding: 0 2rem 1rem 2rem;
-    align-content: center;
-  }
-
-  .add-form {
+  .edit-form, .add-form, .delete-form {
     margin: auto;
     padding: 0 2rem 1rem 2rem;
     align-content: center;
   }
 
   .page-footer {
+    text-align: center;
+  }
+
+  p {
+    font-size: 1rem;
     text-align: center;
   }
 }
