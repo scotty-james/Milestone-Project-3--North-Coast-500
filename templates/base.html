@@ -18,13 +18,13 @@
        <!-- top navbar -->
        <nav class="nav-extended">
         <div class="nav-wrapper">
-            <a href="{{ url_for('home') }}" class="brand-logo black-text">Epic Roadtrips</a>
+            <a href="{{ url_for('home') }}" class="brand-logo">North Coast 500</a> 
             <a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="fas fa-bars"></i></a>
             <ul class="right hide-on-med-and-down">
                 <li><a href="{{ url_for('home') }}">Home</a></li>
                 <li><a href="{{ url_for('get_posts') }}">Reviews</a></li>
                 {% if session.user %}
-				<li><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
+                <!-- <li><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li> -->
                 <li><a href="{{ url_for('add_post') }}"class="btn white-text">Add Review</a></li>
                 <li><a href="{{ url_for('logout') }}">Sign Out</a></li>
                 {% else %}
@@ -85,7 +85,7 @@
 </main>
 
 
-<footer class="page-footer grey darken-4">
+<footer class="page-footer">
   <div class="container">
     <div class="row">
       <div class="col s12 m4 center-align">

@@ -84,20 +84,24 @@ a {
   color: white;
 }
 
+.uppercase {
+  text-transform: uppercase;
+}
+
 /*-------------------------------------------NavBar*/
 
 .brand-logo a {
   padding: 0;
   margin-left: 2rem;
-  color: black;
+  color: white;
 }
 
 .nav-extended {
-  background-color: white;
+  background-color:#0065BF;
 }
 
 .nav-wrapper ul a {
-  color: black;
+  color: white;
 }
 
 /*-------------------------------------------Home Page*/
@@ -105,52 +109,35 @@ a {
 .hero-image {
   position: relative;
   text-align: center;
-  margin-top: 20px;
+  margin-top: 2rem;
 }
 
 .hero-image-text {
   position: absolute;
-  top: 15px; 
-  left: 30px; 
-  margin-left: 20px;
-  margin-top: 20px;
-  margin-right: 60px;
+  top: 1.5rem; 
+  left: 3rem; 
+  margin-left: 2rem;
+  margin-top: 2rem;
+  margin-right: 6rem;
   background-color: rgba(255, 255, 255, 0.5);
-  padding: 10px 20px;
+  padding: 1rem 2rem;
   align-content: center;
 }
 
 .hero-image-text h1 {
-  margin-bottom: 15px;
-  margin-top: 15px;
+  margin-bottom: 1.5rem;
+  margin-top: 1.5rem;
 }
 
 .hero-image-text h2 {
   font-size: 2rem;
-  margin-top: 0px;
+  margin-top: 0;
 }
 
 .side-image-top {
   position: relative;
   text-align: center;
-  margin-top: 15px;
-}
-
-.side-image-txt {
-  position: absolute;
-  top: 70%;
-  left: 90%;
-  transform: translate(-50%, -50%);
-  background-color: rgba(255, 255, 255, 0.9);
-}
-
-.side-image-txt h3 {
-  margin: 5px;
-  padding: 5px;
-}
-
-.side-image-btm {
-  margin-top: 15px;
+  margin-top: 1.5rem;
 }
 
 /*-------------------------------------------Home Page About Section*/
@@ -162,7 +149,7 @@ a {
 .review-image {
   position: relative;
   text-align: center;
-  margin-top: 20px;
+  margin-top: 2rem;
 }
 
 .review-content h4 {
@@ -191,7 +178,6 @@ a {
 }
 
 #submit {
-  color: rgb(0, 0, 0);
   background-color: #0065BF;
   border-radius: 5px;
   width: 100%;
@@ -205,22 +191,21 @@ a {
 }
 
 #cancel-submit {
-  color: rgb(0, 0, 0);
   background-color: #0065BF;
-  border-radius: 5px;
+  border-radius: .5rem;
   width: 100%;
   border: 1px solid black;
   margin-bottom: 1.25rem;
 }
 
-#canccel-submit:hover {
+#cancel-submit:hover {
   background-color: black;
   color: white;
 }
 
 label.form-label {
   margin: 0;
-  padding: 0rem;
+  padding: 0;
 }
 
 .form-label {
@@ -244,13 +229,7 @@ border: 1px solid rgba(184, 178, 178, 0.986);
 
 /*-------------------------------------------Add/Edit Forms*/
 
-.edit-form {
-  margin: 0 15rem 2.5rem 15rem;;
-  padding: 0 20rem 2.5rem 20rem;
-  align-content: center;
-}
-
-.add-form {
+.edit-form, .add-form {
   margin: 0 15rem 2.5rem 15rem;;
   padding: 0 20rem 2.5rem 20rem;
   align-content: center;
@@ -293,8 +272,8 @@ button, input, optgroup, select, textarea {
 
 /*-------------------------------------------Footer*/
 
-.footer {
-  margin-top: 50rem;
+.page-footer {
+  background-color: #0065BF;
 }
 
 .social-links {
@@ -403,13 +382,7 @@ button, input, optgroup, select, textarea {
     align-content: center;
   }
 
-  .edit-form {
-    margin: auto;
-    padding: 0 3rem 1rem 3rem;
-    align-content: center;
-  }
-
-  .add-form {
+  .edit-form, .add-form, .delete-form {
     margin: auto;
     padding: 0 3rem 1rem 3rem;
     align-content: center;
