@@ -31,6 +31,7 @@ def get_posts():
     posts = mongo.db.posts.find()
     return render_template("posts.html", posts=posts)
 
+
 # Sign Up Form Route
 
 @app.route('/register', methods=['GET', 'POST'])
@@ -59,6 +60,7 @@ def register():
 
     return render_template("register.html", form=form)
 
+
 # Sign in Form Route
 
 @app.route('/login', methods=['GET', 'POST'])
@@ -78,9 +80,9 @@ def login():
             # checks hashed password to ensure match with user input
             if check_password_hash(
                     existing_user["password"], request.form.get("password")):
-                        session["user"] = request.form.get("username").lower()
-                        flash("Welcome, {}".format(request.form.get("username")))
-                        return redirect(url_for("get_posts", username=session["user"]))
+                session["user"] = request.form.get("username").lower()
+                flash("Welcome, {}".format(request.form.get("username")))
+                return redirect(url_for("get_posts", username=session["user"]))
             else:
                 # in case where password does not match
                 flash("Incorrect Username and/or Password")
@@ -137,6 +139,7 @@ def add_post():
     return render_template('add_post.html', title='Add Post', form=form)
 
 
+# Edit Post Route
 
 @app.route('/edit_post/<post_id>', methods=['GET', 'POST'])
 def edit_post(post_id):
@@ -166,6 +169,8 @@ def edit_post(post_id):
     return render_template('edit_post.html', post=post_db, form=form)
 
 
+# Delete Post Route
+
 @app.route('/delete_post/<post_id>', methods=['GET', 'POST'])
 def delete_post(post_id):
     post_db = mongo.db.posts.find_one_or_404({'_id': ObjectId(post_id)})
@@ -182,10 +187,11 @@ def delete_post(post_id):
     return render_template('delete_post.html', title="delete review", form=form)
 
 
+# Error handler Route
+
 @app.errorhandler(404)
 def page_not_found(e):
     return render_template('404.html'), 404
-
 
 
 if __name__ == "__main__":

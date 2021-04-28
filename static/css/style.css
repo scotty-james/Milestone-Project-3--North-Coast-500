@@ -74,7 +74,7 @@ a {
 .btn {
   color: white;
   background-color: #0065BF;
-  border-radius: 5;
+  border-radius: .25rem;
   border: 1px solid black;
 }
 
@@ -93,6 +93,10 @@ a {
 
 .flashes {
   background-color: #89b4da;
+}
+
+.modal {
+  width: 40%;
 }
 
 /*-------------------------------------------NavBar*/
@@ -156,10 +160,6 @@ nav .brand-logo {
 .side-image-btm {
   margin-top: 1.5rem;
 }
-
-/*-------------------------------------------Home Page About Section*/
-
-
 
 /*-------------------------------------------Reviews Page*/
 
