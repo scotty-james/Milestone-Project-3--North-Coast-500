@@ -1,12 +1,14 @@
 {% extends "base.html" %}
 {% block content %}
 
+<!-- Review Page Header -->
 <div class="container">
 <h4 class="center-align uppercase">Trip Reviews</h4>
 <p class="center-align">This page is dedicated to trip reviews from travellers who have experienced the magnificent North Coast 500. 
     If you’d like to share your own experience, please sign in and leave an honest review of your trip. </p>
 <hr>
     <br>
+    <!-- Review Form Data Structure -->
         {% for post in posts %}
         <div class="row card-content">
             <div class="container">
@@ -14,6 +16,7 @@
                 <div class="row">
                 <div class="col s12 m4 l3 center-align review-image">
                     <img class="responsive-img" src="{{ post.image_url }}" alt="image of {{ post.post_title }}" />
+                    <!-- Data variables to pull in user name and timestamp (timestamp importded using the datetime module) -->
                     <p><em>{{ post.created_by }} posted a review on {{ post.review_date }}</em></p>
                 </div>
                 <div class="col s12 m8 l9 review-content">
@@ -55,6 +58,7 @@
                     </div>
                     <p>{{ post.post_description }}</p>
                     {% if session.user|lower == post.created_by|lower %}
+                    <!--Provides linkes to delete and edit forms so users can update their posts/content-->
                     <a href="{{ url_for('delete_post', post_id=post._id) }}" class="btn">Delete Review</a>
                     <a href="{{ url_for('edit_post', post_id=post._id) }}" class="btn">Update Review</a>
                     {% endif %}

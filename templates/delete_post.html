@@ -1,4 +1,6 @@
 {% extends "base.html" %} {% block content %}
+
+<!-- Delete Post Components -->
 <h1 class="center-align">Delete Review</h1>
 {% with messages = get_flashed_messages() %} {% if messages %}
 <ul>
@@ -7,6 +9,8 @@
   {% endfor %}
 </ul>
 {% endif %} {% endwith %}
+
+<!-- Delete Post Structure -->
 <form class="delete-form" action="" method="post" enctype="multipart/form-data">
   <div class="card-panel form-panel">
     {{ form.csrf_token }}
@@ -21,6 +25,7 @@
     <p>This will delete your review forever!</p>
     <p>{{ form.submit(class="btn") }}</p>
 
+    <!-- Cancel Btn to provide back step to customer -->
     <a href="{{ url_for('get_posts') }}" class="btn" id="cancel-submit"
       >Cancel</a
     >
