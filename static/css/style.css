@@ -136,7 +136,7 @@ nav .brand-logo {
   margin-left: 1.5rem;
   margin-top: 1rem;
   margin-right: 4rem;
-  background-color: rgba(255, 255, 255, 0.5);
+  background-color: rgba(255, 255, 255, 0.7);
   padding: .5rem 1.5rem;
   align-content: center;
 }
@@ -144,6 +144,7 @@ nav .brand-logo {
 .hero-image-text h1 {
   margin-bottom: 1.5rem;
   margin-top: 1.5rem;
+  font-size: 2.5rem;
 }
 
 .hero-image-text h2 {

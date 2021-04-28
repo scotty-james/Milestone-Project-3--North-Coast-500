@@ -2,6 +2,14 @@ Welcome to the North Coast 500 - a Review Site for travellers embarking on Scotl
 
 I built this travel information and review site for my third milestone project for the Code Institutes Full Stack Software Development Course.
 
+![Responsive Designs](static/images/readme_image1.png)
+
+### <p align="center">The image above is a visual of the site displayed on different devices using [I Am Responsive](http://ami.responsivedesign.is/#)
+
+### <p align="center">You can view the live site here: [www.northcoast500.com](https://north-coast-500.herokuapp.com/)
+
+---
+
 
 ## Contents
 
