@@ -52,6 +52,12 @@ I built this travel information and review site for my third milestone project f
 
 ### User Stories
 
+> - As a new website user, I want to understand the website purpose easily so that I remain interested in exploring the site further. 
+> - s a new website user, I want to understand the reasons why I need to create an account so that I can make a decision on the value of doing so. 
+> - As an existing user I want to be able to create and update my own personal reviews so that I have full control on the content I submit. 
+> - As an existing user I want to be able to delete any review I have submitted so that I have full control on the content I submit. 
+> - As an existing user, I want to be able to log out at any point when I am finished so that I know my account is secure. 
+
 ### Strategy
 
 #### External user’s goal
