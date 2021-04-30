@@ -164,8 +164,35 @@ I really liked the simplicity of Open Sans and therfore didn't feel the need fro
 ## <p align="center">Features
 
 ### Existing Features
+- A tab that allows users to ‘Add Review’ which is displayed whether the user is logged in or not.
+- A model that appears after clicking the ‘Add Review’ Tab if the user is not logged in, the model containing information on how to add a review by either signing in or creating an account. 
+- A sign up page that allows new users to create an account, which will allow the user to interact with the site. 
+- A sign in page that will allow existing members to sign into their account in order to interact with the site. 
+- Flash messaging to warn the user of specific actions - for example, advising the customer that a user name already exists if they try to create an account using a username that has already been taken. 
+- Flash messaging to advise the customer that they have successfully created an account. 
+- Flash messaging to warn the customer when they enter the wrong username and/or password when signing in. 
+- All forms have validation to ensure the user enters the required parameters in each form throughout the site. 
+- Password hashing to ensure security is enabled within the site. 
+- Flash messaging to welcome the user upon signing in successful, displaying the users name on screen. 
+- Add Review tab that displays a form that allows the user to create and submit a review directly onto the dedicated review page. 
+- An ‘Update’ tab that appears only on the reviews submitted by the logged in user. The update tab when clicked will allow the user to edit their review. 
+- Updated reviews when submitted are reloaded on the main review page within the site. 
+- A ‘Delete’ Tab that allows appears only on the reviews submitted by the logged in user. 
+- A ‘Cancel’ button on the delete review page that allows the customer to be able to change their mind after clicking the first delete button. 
+- Ability to add an image url in the review form that allows users to add and submit an image with their review. 
+- A sign out tab that allows the user to sign out of their session, with a flashed message to confirm to the user that sign out has been successful. 
+- User ratings select drop down which converts into Star Ratings when the review is submitted. 
+- Nav bar that displays certain links only when the user is signed into their account. 
+
 
 ### Features Left to Implement
+
+- A user profile page which will display the users previously submitted reviews. 
+- An add comments section which will allow users to ask questions within the community of existing members. 
+- A like / helpful button which will allow users to like other users' reviews. 
+- Expansion of the website to include other route trip routes around the globe. 
+- Ability for users to sign up to email newsletters. 
+- Admin functionality that will allow admin to moderate reviews and comments as the community grows. 
 
 ---
 
@@ -173,7 +200,38 @@ I really liked the simplicity of Open Sans and therfore didn't feel the need fro
 
 ### Languages
 
+- [HTML5](https://en.wikipedia.org/wiki/HTML5)
+- [CSS3](https://en.wikipedia.org/wiki/CSS)
+- [Python](https://www.python.org/)
+- [JQuery](https://jquery.com/)
+
+
 ### Frameworks and Libraries
+- [Pip3](https://pip.pypa.io/) - was used to install the required packages to run python.
+- [Flask](https://flask.palletsprojects.com/en/1.1.x/) - Was used as the main micro framework for the web app.
+- [WTForms](https://flask-wtf.readthedocs.io/en/stable/quickstart.html) - Was used to create all forms within the app.
+- [Jinja](https://jinja.palletsprojects.com/en/2.11.x/) - Was used for all templating within python.
+- [PyMongo](https://pypi.org/project/pymongo/) - Was used as the Python driver for MongoDB. 
+[Werkzeug](https://werkzeug.palletsprojects.com/en/1.0.x/) - used for password hashing within the user authentication process. 
+[Datetime](https://docs.python.org/3/library/datetime.html) - used to pull in date automatically when user post submitted to the site.
+- [MongoDB](https://www.mongodb.com) - Was used as the primary database for the webapp.
+-[Heroku](https://www.heroku.com/) - was used to deploy the webapp. 
+[RandomKeygen](https://randomkeygen.com/) - Used to generate a random number which was used as the web app's SECRET_KEY.
+- [Materialize](https://materializecss.com/) - was used for the navbar, the footer and the model structure.
+- [Google Fonts](https://fonts.google.com/) - used to select the text font to be used throughout the site.
+- [Gitpod](https://gitpod.io/) - used as my IDE.
+- [Git](https://git-scm.com/) - used for version control via VS code by providing regular commits to Git, and pushing to GitHub.
+- [GitHub](https://github.com/) - for my Git repository.
+- [Balsamic](https://balsamiq.com/) - used to create the website wireframes.
+- [Tinyjpg](https://tinyjpg.com/) - used for image resizing.
+- [Favicon Generator](https://favicon.io/favicon-converter/) - used for generating the site favicon.
+[PEP8](http://pep8online.com/) - used to validate the code for the website. 
+[JS Hint](https://jshint.com/) - used to validate the javascript code within the website. 
+[Jigsaw](https://jigsaw.w3.org/css-validator/) - used to vaidate all CSS code. 
+[W3C Markup Validation](https://validator.w3.org/#validate_by_input) - used to validate the HTML within the code base. 
+
+
+
 
 ---
 
