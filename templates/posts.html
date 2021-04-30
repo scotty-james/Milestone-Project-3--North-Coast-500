@@ -3,10 +3,11 @@
 
 <!-- Review Page Header -->
 <div class="container">
-<h4 class="center-align uppercase">Trip Reviews</h4>
+<p class="center-align uppercase">Trip Reviews</p>
 <p class="center-align">This page is dedicated to trip reviews from travellers who have experienced the magnificent North Coast 500. 
     If you’d like to share your own experience, please sign in and leave an honest review of your trip. </p>
 <hr>
+</div>
     <br>
     <!-- Review Form Data Structure -->
         {% for post in posts %}
@@ -24,36 +25,36 @@
                     <!--Takes user rating string and converts/displays star(s)-->
                     <div class="review-content">
                         {% if post.star_rating == "5" %}
-                        <h4 class="fas fa-star"></h4>
-                        <h4 class="fas fa-star"></h4>
-                        <h4 class="fas fa-star"></h4>
-                        <h4 class="fas fa-star"></h4>
-                        <h4 class="fas fa-star"></h4>
+                        <p class="fas fa-star"></p>
+                        <p class="fas fa-star"></p>
+                        <p class="fas fa-star"></p>
+                        <p class="fas fa-star"></p>
+                        <p class="fas fa-star"></p>
                         {% elif post.star_rating == "4" %}
-                        <h4 class="fas fa-star"></h4>
-                        <h4 class="fas fa-star"></h4>
-                        <h4 class="fas fa-star"></h4>
-                        <h4 class="fas fa-star"></h4>
-                        <h4 class="far fa-star"></h4>
+                        <p class="fas fa-star"></p>
+                        <p class="fas fa-star"></p>
+                        <p class="fas fa-star"></p>
+                        <p class="fas fa-star"></p>
+                        <p class="far fa-star"></p>
                         {% elif post.star_rating == "3" %}
-                        <h4 class="fas fa-star"></h4>
-                        <h4 class="fas fa-star"></h4>
-                        <h4 class="fas fa-star"></h4>
-                        <h4 class="far fa-star"></h4>
-                        <h4 class="far fa-star"></h4>
+                        <p class="fas fa-star"></p>
+                        <p class="fas fa-star"></p>
+                        <p class="fas fa-star"></p>
+                        <p class="far fa-star"></p>
+                        <p class="far fa-star"></p>
                         {% elif post.star_rating == "2" %}
-                        <h4 class="fas fa-star"></h4>
-                        <h4 class="fas fa-star"></h4>
-                        <h4 class="far fa-star"></h4>
-                        <h4 class="far fa-star"></h4>
-                        <h4 class="far fa-star"></h4>
+                        <p class="fas fa-star"></p>
+                        <p class="fas fa-star"></p>
+                        <p class="far fa-star"></p>
+                        <p class="far fa-star"></p>
+                        <p class="far fa-star"></p>
                         {% elif post.star_rating == "1" %}
-                        <h4 class="fas fa-star"></h4>
-                        <h4 class="far fa-star"></h4>
-                        <h4 class="far fa-star"></h4>
-                        <h4 class="far fa-star"></h4>
-                        <h4 class="far fa-star"></h4>
-                        </h4>
+                        <p class="fas fa-star"></p>
+                        <p class="far fa-star"></p>
+                        <p class="far fa-star"></p>
+                        <p class="far fa-star"></p>
+                        <p class="far fa-star"></p>
+                        </p>
                         {% endif %}
                     </div>
                     <p>{{ post.post_description }}</p>
@@ -67,7 +68,6 @@
             <hr>
         </div>
         </div>
-    </div>
     </div>
     <br>
    

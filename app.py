@@ -96,19 +96,6 @@ def login():
     return render_template("login.html", form=form)
 
 
-# User Profile Route
-
-@app.route("/profile/<username>", methods=["GET", "POST"])
-def profile(username):
-    username = mongo.db.users.find_one_or_404(
-        {"username": session["user"]})["username"]
-
-    if session["user"]:
-        return render_template("profile.html", username=username)
-
-    return redirect(url_for("login"))
-
-
 # User Sign Out Route
 
 @app.route("/logout")

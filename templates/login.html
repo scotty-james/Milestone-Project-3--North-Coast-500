@@ -4,7 +4,7 @@
 <h1 class="form-heading center-align">Sign In</h1>
 {% with messages = get_flashed_messages() %} {% endwith %}
 
-<form class="signup-form" action="" method="post">
+<form class="signup-form" method="post">
   {{ form.csrf_token }}
   <p>
     {{ form.username.label(class="form-label") }}<br />

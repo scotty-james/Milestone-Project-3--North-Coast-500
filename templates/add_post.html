@@ -11,45 +11,45 @@
 {% endif %} {% endwith %}
 
 <!-- Form Structure -->
-<form class="add-form" action="" method="post" enctype="multipart/form-data">
+<form class="add-form" method="post" enctype="multipart/form-data">
   <div class="card-panel form-panel">
     {{ form.csrf_token }}
-    <h3>
+    <p>
       {{ form.category_name.label(class="form-label") }}<br />
       {{ form.category_name(class="form-label") }}<br />
       {% for error in form.category_name.errors %}
       <span style="color: red">{{ error }}</span>
       {% endfor %}
-    </h3>
-    <h3>
+    </p>
+    <p>
       {{ form.star_rating.label(class="form-label") }}<br />
       {{ form.star_rating(class="form-label") }}<br />
       {% for error in form.star_rating.errors %}
       <span style="color: red">{{ error }}</span>
       {% endfor %}
-    </h3>
-    <h3>
+    </p>
+    <p>
       {{ form.post_title.label(class="form-label") }}<br />
       {{ form.post_title(class="form-label") }}<br />
       {% for error in form.post_title.errors %}
       <span style="color: red">{{ error }}</span>
       {% endfor %}
-    </h3>
-    <h3>
+    </p>
+    <p>
       {{ form.post_description.label(class="form-label") }}<br />
       {{ form.post_description(class="form-label") }}<br />
       {% for error in form.post_description.errors %}
       <span style="color: red">{{ error }}</span>
       {% endfor %}
-    </h3>
-    <h3>
+    </p>
+    <p>
       {{ form.image_url.label(class="form-label") }}<br />
       {{ form.image_url(class="form-label")}}<br />
       {% for error in form.image_url.errors %}
       <span style="color: red">{{ error }}</span>
       {% endfor %}
-    </h3>
-    <h3>{{ form.submit(class="btn") }}</h3>
+    </p>
+    <p>{{ form.submit(class="btn") }}</p>
   </div>
 </form>
 

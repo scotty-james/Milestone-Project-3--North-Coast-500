@@ -170,15 +170,15 @@ nav .brand-logo {
   margin-top: 2rem;
 }
 
-.review-content h4 {
+.review-content p {
   font-size: 1.75rem;
 }
 
-.review-content h4.fas {
+.review-content p.fas {
   color: gold;
 }
 
-.review-content h4.far {
+.review-content p.far {
   color: gold;
 }
 
