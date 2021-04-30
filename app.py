@@ -177,8 +177,8 @@ def delete_post(post_id):
 # Error handler Route
 
 @app.errorhandler(404)
-def page_not_found(e):
-    return render_template('404.html'), 404
+def handle_404(exception):
+    return render_template('404.html')
 
 
 if __name__ == "__main__":

@@ -1,9 +1,12 @@
-{% extends "base.html" %} 
-{% block title %}Page Not Found{% endblock %} {% block
-body %}
+{% extends "base.html" %}
+{% block content %}
+
 <!-- 404 error handling code taken from flask documentation (https://flask.palletsprojects.com/en/1.1.x/patterns/errorpages/) -->
-<h1>Page Not Found</h1>
-<p>Oh, this page appears to no longer exist.
-  <p><a href="{{ url_for('index') }}">Let's get you back to the main page!</a>
-{% endblock %}
+
+    <h1>Hmmm, something went wrong!</h1>
+    <p>This page appears to no longer exist.<a href="{{ url_for('home') }}">Let's get you back to the main page!</a></p>
+    <!-- <p>If you're interested the reason was:</p>
+    <p>{{ exception }}</p> -->
+{%  endblock %}
+
 
