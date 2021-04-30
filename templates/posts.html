@@ -20,7 +20,7 @@
                     <p><em>{{ post.created_by }} posted a review on {{ post.review_date }}</em></p>
                 </div>
                 <div class="col s12 m8 l9 review-content">
-                    <h5></i>{{ post.post_title }}</h5>
+                    <h5>{{ post.post_title }}</h5>
                     <!--Takes user rating string and converts/displays star(s)-->
                     <div class="review-content">
                         {% if post.star_rating == "5" %}
