@@ -62,13 +62,42 @@ I built this travel information and review site for my third milestone project f
 
 #### External user’s goal
 
+- Read the reviews of others who have experienced the route in order to gain real life reviews that can help me make a decision. 
+- Creating an account should be simple and quick, requiring as little personal information as possible.  -
+-  Share my own experience with others by submitting reviews and rating my trip. 
+- Access additional information outside the website to explore further and gain more insight (links to external sources, dedicated websites etc)
+
+
 #### Site owner's goal
+
+- Built a site that provides specific information to a targeted audience. 
+- Create a site that allows users to submit reviews in order to share their experience with others. 
+- Create a site that allows users to manipulate their review input by being able to update or delete their previous posts. 
+- Create a site that is user friendly and provides the targeted user with inspiration and links to further information.
+
 
 ### Scope
 
 #### Scope In
 
+- A homepage that provides information about Scotland's north coast 500 road trip route, including the key stopping points along the route. 
+- A visual image of the route above the fold on the website to draw the user’s initial attention to the route map and key stops along the way. 
+- External links to all information outlines on the home page to allow the user to gain deeper information should they want to. 
+- Provide information on places to stay, food and drink, beaches and coastal regions of the route, and scotland’s wildlife likely to be encountered along the route. 
+- A review page containing all reviews submitted by other users. 
+- Ability for new users to create an account on the site. 
+- Ability for existing users to log into their account.
+- A review form that allows users to create and submit a review. 
+- An edit review form that allows users to update previously posted reviews. 
+- A delete review form that allows users to remove previously posted reviews. 
+- Ability to log out of the site. 
+
 #### Scope Out
+
+- Customer profile page
+- Ability to like or add comments to other users' reviews. 
+- Search functionality to allow users to search reviews. 
+
 
 ### Structure
 
