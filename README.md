@@ -212,8 +212,8 @@ I really liked the simplicity of Open Sans and therfore didn't feel the need fro
 - [WTForms](https://flask-wtf.readthedocs.io/en/stable/quickstart.html) - Was used to create all forms within the app.
 - [Jinja](https://jinja.palletsprojects.com/en/2.11.x/) - Was used for all templating within python.
 - [PyMongo](https://pypi.org/project/pymongo/) - Was used as the Python driver for MongoDB. 
-[Werkzeug](https://werkzeug.palletsprojects.com/en/1.0.x/) - used for password hashing within the user authentication process. 
-[Datetime](https://docs.python.org/3/library/datetime.html) - used to pull in date automatically when user post submitted to the site.
+- [Werkzeug](https://werkzeug.palletsprojects.com/en/1.0.x/) - used for password hashing within the user authentication process. 
+- [Datetime](https://docs.python.org/3/library/datetime.html) - used to pull in date automatically when user post submitted to the site.
 - [MongoDB](https://www.mongodb.com) - Was used as the primary database for the webapp.
 -[Heroku](https://www.heroku.com/) - was used to deploy the webapp. 
 [RandomKeygen](https://randomkeygen.com/) - Used to generate a random number which was used as the web app's SECRET_KEY.
@@ -225,12 +225,10 @@ I really liked the simplicity of Open Sans and therfore didn't feel the need fro
 - [Balsamic](https://balsamiq.com/) - used to create the website wireframes.
 - [Tinyjpg](https://tinyjpg.com/) - used for image resizing.
 - [Favicon Generator](https://favicon.io/favicon-converter/) - used for generating the site favicon.
-[PEP8](http://pep8online.com/) - used to validate the code for the website. 
-[JS Hint](https://jshint.com/) - used to validate the javascript code within the website. 
-[Jigsaw](https://jigsaw.w3.org/css-validator/) - used to vaidate all CSS code. 
-[W3C Markup Validation](https://validator.w3.org/#validate_by_input) - used to validate the HTML within the code base. 
-
-
+- [PEP8](http://pep8online.com/) - used to validate the code for the website. 
+- [JS Hint](https://jshint.com/) - used to validate the javascript code within the website. 
+- [Jigsaw](https://jigsaw.w3.org/css-validator/) - used to vaidate all CSS code. 
+- [W3C Markup Validation](https://validator.w3.org/#validate_by_input) - used to validate the HTML within the code base. 
 
 
 ---
@@ -239,9 +237,81 @@ I really liked the simplicity of Open Sans and therfore didn't feel the need fro
 
 ### W3C Validation
 
+The following pages were passed through the official W3C validation site with no errors returning:
+
+- index.html: No errors or warnings to show.
+- posts.html: No errors or warnings to show.
+- register.html: No errors or warnings to show.
+- login.html: No errors or warnings to show.
+- add_post.html: No errors or warnings to show.
+- edit_post.html: No errors or warnings to show.
+- delete_post.html: No errors or warnings to show.
+
+![HTML Validator Results](static/images/readme_images/html_validator.png)
+
+- style.css: Congratulations! No Error Found.
+
+![HTML Validator Results](static/images/readme_images/css_validator.png)
+
 ### JSHint
 
+The following files were passed through JSHint with no warnings detected.
+
+- script.js
+
 ### User Story Testing Validation
+
+> #### <p align="center">_As a new website user, I want to understand the website purpose easily so that I remain interested in exploring the site further. 
+
+I’ve designed the site in a way that as son as the user enters the site they immediately see what the page is about by displaying 3 key images above the fold:
+- The large image  on the right displays a road with a car driving along it, instantly articulating a road journey. On this is a clear message to the customer - discovery and share. 
+- A button has been added to the image to allow the customer to quickly navigate to the review site in order to read reviews posted by other users. A link to the review page is aslo contained within the nav bar.
+- The top image on the right hand side displays a map of the road trip route. 
+- The bottom right hand image displays the North 500 route sign. The route is commonly referred to as Scotland's route 66.
+
+![User Story Image](static/images/readme_images/user_story_image1.png)
+![User Story Image](static/images/readme_images/user_story_image3.png)
+
+> #### <p align="center">_As a new website user, I want to understand the reasons why I need to create an account so that I can make a decision on the value of doing so. 
+
+- To draw attention to the sign in functionality I have emphasised this within the nav bar - boxing it for additional focus. 
+- The Sign in page is simple and clear and has been built to allow the customer to sign up at speed. The form is simple and requires the user to provide a username and password only in order to create an account. 
+
+
+![User Story Image](static/images/readme_images/user_story_image2.png)
+
+
+> #### <p align="center">_As an existing user I want to be able to create and update my own personal reviews so that I have full control on the content I submit. 
+
+- The add review form allows customers to create and submit their own personal experiences with other site users. The form is simple and easy to fill in and pre-populates with the ‘Route’. This feature only has one option at present but has been built to allow the site owner to add additional routes that users can review.  
+- The user can then edit their review once it has been submitted. To do this, the user needs to be logged in to their account to ensure only their review is protected and only they can edit. 
+- The user can update their review as many times as they like, and have full control of the content they add or remove. 
+
+![User Story Image](static/images/readme_images/user_story_image4.png)
+![User Story Image](static/images/readme_images/user_story_image5.png)
+![User Story Image](static/images/readme_images/user_story_image6.png)
+![User Story Image](static/images/readme_images/user_story_image7.png)
+
+
+> #### <p align="center">_As an existing user I want to be able to delete any review I have submitted so that I have full control on the content I submit. 
+
+- The user has full control with their content so once they are logged into their account, they have the ability to delete the review by clicking on the delete button underneath their post. 
+- Once the delete button is clicked, the use will be directed to a ‘delete post’ page where they will be asked to confirm they wish to delete. 
+- The confirm delete page pre populates the review title, providing the user with additional comfort that they have deleted the correct post. 
+- There is a cancel button on the page, when clicked will take the customer back to the main reviews page - and of course, keeping the review alive. 
+
+
+![User Story Image](static/images/readme_images/user_story_image8.png)
+
+> #### <p align="center">_As an existing user, I want to be able to log out at any point when I am finished so that I know my account is secure. 
+
+- Within the nav bar, the sign out button will appear once the user is logged into the web app allowing the user to log out quickly and easily. 
+- Once the user clicks the sign out button, a flash message will appear to let the customer know they have logged out. 
+- The user is then redirected to the login page on the site. This redirect is on purpose in case the user accidentally logs out and wishes to log back in. 
+
+
+![User Story Image](static/images/readme_images/user_story_image9.png)
+
 
 ### Browser Validation
 
