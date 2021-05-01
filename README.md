@@ -398,11 +398,82 @@ I went through each page individually to manually check that all links & hover s
 
 ### Site Performance Validation
 
+#### First Test
+
+![Lighthouse Report](static/images/readme_images/lighthouse_image1.png)
+
+The first report from lighthouse returned poor scores for Accessibility performance and best practice. Reasons outlined below. 
+
+- Accessibility: Failing Elements were attributed to 2 main areas:
+  - Low contrast text on all of the links placed throughout index.html, the color on these links were scoring low so changed the color to the same blue as I have as the main theme for the website, which improved contrast.
+  - Some heading elements were not in a sequentially-decedning order (H5), I changed these to provide better HTML structure. 
+
+- Best Practices: Failing elements where:
+  - Does not use HTTPS - 19 insecure requests found
+  - Links to cross-origin destinations are unsafe: I updated all links by adding `rel="noopener"` within the link structure.
+
+With these issues fixed, the site now returns a healthy lighthouse score across all key measures: 
+
+#### Second Test
+
+![Lighthouse Report](static/images/readme_images/lighthouse_image2.png)
+
+### CRUD Testing: 
+
+To ensure the standards of CRUD testing were met, I tested the following steps to ensure no errors returned. 
+
+#### Create a new user:
+- Created new user on the front end website
+- Checked mongo DB collection to ensure the user was added to the database. 
+- Log in using new users credentials. 
+- Log out of the user account. 
+- From mongoDB, delete the record manually to remove the record from the database. 
+- Go back to the site and log in using users credentials. 
+- Verified that the account had been deleted and the user could no longer log in. 
+
+#### Create a new record (Add Review)
+- Fill in the Add Review form and submit.
+- Go to MongoDB and verify the new record has been added to the database. 
+
+Front end:
+![Crud Testing](static/images/readme_images/crud_testing_image1.png)
+
+backend:
+![Crud Testing](static/images/readme_images/crud_testing_image2.png)
+
+#### Read the review:
+- Go to the review page and verify that the submitted review has been posted to the intended place on the website. 
+
+#### Update the Review:
+- Got to review and click ‘Update’. 
+- Change the review content. 
+- Submit update
+- Go to the review page and verify that the submitted review has been posted to the intended place on the website. 
+- Go to mongo DB and verify that review has been amended in the database. 
+
+Front end:
+![Crud Testing](static/images/readme_images/crud_testing_image3.png)
+
+backend:
+![Crud Testing](static/images/readme_images/crud_testing_image4.png)
+
+#### Delete the review:
+- Go to the review and click ‘delete’. 
+- Verify that I am redirected to a ‘confirm delete’ page that ensures the user intends to delete the review. 
+- Click delete to verify that I want to delete the review. 
+- Go to the review page and verify that the submitted review has been removed. 
+- Go to mongo DB and verify that the document has in fact been deleted from the database. 
+
+### Error Handling 
+
+To ensure that any site error is handled gracefully, a 404 error handler function was added to the page. The site was tested on all pages to generate the 404 message, which displays a simple message to the user, with a redirect to the home page.
+
+![404](static/images/readme_images/readme_404.png)
+
+
+
 ### Final Manual UAT Testing
 
-### Debugging
-
-#### Live Testing:
 
 ---
 
