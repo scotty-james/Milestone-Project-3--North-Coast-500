@@ -474,6 +474,34 @@ To ensure that any site error is handled gracefully, a 404 error handler functio
 
 ### Final Manual UAT Testing
 
+| Functionality                                                                                    | UAT Result |
+| ------------------------------------------------------------------------------------------------ | ---------- |
+| All navigation links work as intended                                                            | PASS       |
+| All links in footer work as intended                                                             | PASS       |
+| Review Page Button works as intended                                                             | PASS       |
+| All links on home page redirect to correct pages                                                 | PASS       |
+| Add review form generates right attribute for missing field input                                | PASS       |
+| Add Review form submit button works as intended                                                  | PASS       |
+| Add Review when submitted posts to review page                                                   | PASS       |
+| Add Review when submitted updates collection in MongoDB                                          | PASS       |
+| Add Review when submitted converts star rating number to star icons                              | PASS       |
+| Add Review when submitted flashes correct message to user                                        | PASS       |
+| Edit Review when clicked pre loads review form                                                   | PASS       |
+| Edit Review form when submitted updates content on front end review site                         | PASS       |
+| Edit Review Form when submitted updates MongoBD document with new content                        | PASS       |
+| Edit Review form when submitted flashes message to user                                          | FAIL       |
+| Delete Review Form redirect is functioning as intended                                           | PASS       |
+| Delete review when submitted removes post from review page                                       | PASS       |
+| Delete review when submitted removes post from MongoDB.                                          | PASS       |
+| Delete review when submitted flashes correct message to user                                     | FAIL       |
+| Correct message flashes when username inputted incorrectly on login page                         | PASS       |
+| Correct message flashes when user attempts to sign in using username that hasn't been created    | FAIL       |
+| Correct message flashes when username inputted incorrectly on login page                         | FAIL       |
+| Link on login page redirects as intended                                                         | PASS       |
+| Correct message flashes when existing username used to make a new account                        | PASS       |
+| Correct message flashes when user signs up successfully                                          | PASS       |
+| Sign out link redirects to sign in page                                                          | PASS       |
+| Correct message displays when user is signed out                                                 | PASS       |
 
 ---
 
