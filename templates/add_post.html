@@ -2,13 +2,6 @@
 
 <!-- Add Review Form Components -->
 <h1 class="center-align form-heading">Add Review</h1>
-{% with messages = get_flashed_messages() %} {% if messages %}
-<ul>
-  {% for message in messages %}
-  <li class="alert-warning">{{ message }}</li>
-  {% endfor %}
-</ul>
-{% endif %} {% endwith %}
 
 <!-- Form Structure -->
 <form class="add-form" method="post" enctype="multipart/form-data">

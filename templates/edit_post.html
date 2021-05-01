@@ -2,13 +2,6 @@
 
 <!-- Edit Post Components -->
 <h1 class="center-align">Edit Review</h1>
-{% with messages = get_flashed_messages() %} {% if messages %}
-<ul>
-  {% for message in messages %}
-  <li class="alert-warning">{{ message }}</li>
-  {% endfor %}
-</ul>
-{% endif %} {% endwith %}
 
 <!-- Edit Post Structure -->
 <form class="edit-form" method="post" enctype="multipart/form-data">

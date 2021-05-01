@@ -2,13 +2,6 @@
 
 <!-- Delete Post Components -->
 <h1 class="center-align">Delete Review</h1>
-{% with messages = get_flashed_messages() %} {% if messages %}
-<ul>
-  {% for message in messages %}
-  <li class="alert-warning">{{ message }}</li>
-  {% endfor %}
-</ul>
-{% endif %} {% endwith %}
 
 <!-- Delete Post Structure -->
 <form class="delete-form" method="post" enctype="multipart/form-data">

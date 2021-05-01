@@ -33,7 +33,6 @@ def get_posts():
 
 
 # Sign Up Form Route
-
 @app.route('/register', methods=['GET', 'POST'])
 def register():
     form = SignupForm(request.form)
@@ -62,7 +61,6 @@ def register():
 
 
 # Sign in Form Route
-
 @app.route('/login', methods=['GET', 'POST'])
 def login():
     if session.get('logged_in'):
@@ -73,7 +71,7 @@ def login():
 
     if form.validate_on_submit():
         # checks database to see if username exists
-        existing_user = mongo.db.users.find_one_or_404(
+        existing_user = mongo.db.users.find_one(
             {"username": request.form.get("username").lower()})
 
         if existing_user:
@@ -97,7 +95,6 @@ def login():
 
 
 # User Sign Out Route
-
 @app.route("/logout")
 def logout():
     flash("You have been signed out")
@@ -106,7 +103,6 @@ def logout():
 
 
 # Add Review Route
-
 @app.route('/add_post', methods=['GET', 'POST'])
 def add_post():
     today_date = date.today()
@@ -122,12 +118,12 @@ def add_post():
             "created_by": session["user"],
             "review_date": current_date
         })
+        flash("Review Submitted")
         return redirect(url_for('get_posts', title='New Post Added'))
     return render_template('add_post.html', title='Add Post', form=form)
 
 
 # Edit Post Route
-
 @app.route('/edit_post/<post_id>', methods=['GET', 'POST'])
 def edit_post(post_id):
     today_date = date.today()
@@ -152,15 +148,15 @@ def edit_post(post_id):
                 "review_date": current_date
             }
         })
+        flash("Review Updated")
         return redirect(url_for('get_posts', title='Review Updated'))
     return render_template('edit_post.html', post=post_db, form=form)
 
 
 # Delete Post Route
-
 @app.route('/delete_post/<post_id>', methods=['GET', 'POST'])
 def delete_post(post_id):
-    post_db = mongo.db.posts.find_one_or_404({'_id': ObjectId(post_id)})
+    post_db = mongo.db.posts.find_one({'_id': ObjectId(post_id)})
     if request.method == 'GET':
         form = DeleteForm(data=post_db)
         return render_template('delete_post.html', title="Delete post", form=form)
@@ -170,12 +166,12 @@ def delete_post(post_id):
         posts_db.delete_one({
             '_id': ObjectId(post_id),
         })
+        flash("Review Deleted")
         return redirect(url_for('get_posts', title='Review Deleted'))
     return render_template('delete_post.html', title="delete review", form=form)
 
 
 # Error handler Route
-
 @app.errorhandler(404)
 def handle_404(exception):
     return render_template('404.html')

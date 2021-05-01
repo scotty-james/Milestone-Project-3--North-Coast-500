@@ -507,6 +507,14 @@ To ensure that any site error is handled gracefully, a 404 error handler functio
 
 ### <p align="center"> Fixed Bugs
 
+| Bug                                                                                               | Fix |
+| ------------------------------------------------------------------------------------------------ | --------------------------------------------------------- |
+| No user messaging when new review submitted, informing them that the review posted successfully | To resolve this, I updated the add_post route in ap.py to call a flash message in the event of a successful submission. Tested and results are now as expected |
+| No user messaging when a review has been updated successfully.| To resolve this, I updated the function in app.py (/edit_post route) to include a flash message when form submission is successful. Tested and working ok. |
+| No user messaging when a review has been deleted successfully. | To resolve this, I updated the function in app.py (/delete_post route) to include a flash message when form submission is successful. Tested and working ok. |
+| 404 error handler returning as intended but with no messaging.  |I had originally used the code from the Flask documentation, copying and pasting the 404.html code also, however, to resolve the issue I removed the following code `{% block title %}Page Not Found{% endblock %} {% block body %} ` and replaced with `{% block content %}`, this resolved the error and returned the correct messaging. 
+ |
+
 ---
 
 ### Remaining Bugs:
