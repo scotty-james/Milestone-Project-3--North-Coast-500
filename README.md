@@ -315,13 +315,92 @@ I’ve designed the site in a way that as son as the user enters the site they i
 
 ### Browser Validation
 
+In addition to testing on google chrome, I tested the game fully on the Safari and Firefox browsers.
+
+- Firefox: All tests successful 
+- Safari: All tests successful, however, the form size was smaller than expected. I will look at this as part of a future release. 
+- Internet Explorer: All tests successful, same view on the form size as safari however, the website is optimised to be run on Chrome. 
+
+### Responsiveness Validation
+
+#### Dev Tools
+The project was built with mobile first in mind. Chrome Dev Tools toggle device toolbar was used to check the site on available devices to ensure the webapp was fully responsive. I checked each page individually on each device type. 
+
+Manual Device Check:
+
+I checked the site manually on the following devices - all pages check checked separately.
+- Samsung S10
+- Iphone X
+- Macbook Pro 
+- Dell Laptop
+- Ipad Pro
+- Samasung Tablet
+- Monitor Screen 
+
+#### Link And Hover Validation
+I went through each page individually to manually check that all links & hover styling worked as intended. This test was performed on both mobile and desktop devices. 
+
+- index.html: 
+    - First call to action link on the hero image.
+    - Nav Bar: Links, add review modal, add review link, sign in button and sign out link.
+    - All links contiained within the body of the page (within each section). Each navigation link on all pages were tested both forward and backward to ensure each page was returning as intended. 
+    - Footer links: -- All three social links, 'Discover' link and 'Explore link'. All redirects checked to ensure they were correct. 
+
+- get_post.html:
+    - Footer links: -- All three social links, 'Discover' link and 'Explore link'. All redirects checked to ensure they wewre correct. 
+
+- login.html:
+    - Sign in link and re direct link to create new account.
+    - Footer links: -- All three social links, 'Discover' link and 'Explore link'. All redirects checked to ensure they wewre correct. 
+
+- register.html:
+    - Sign up link and re direct link to login to existing account.
+    - Footer links: -- All three social links, 'Discover' link and 'Explore link'. All redirects checked to ensure they wewre correct. 
+
+- Navbar
+    - Tested each navigation link on all pages both forward and backward to ensure each page was returning as intended. 
+
+- Logo: 
+    - Test the logo link on each page to ensure navigation back to index.html. 
+
+#### Form Validation
+
+- Sign in form on login.html: 
+    - Checked on both mobile, ipad and desktop devices. 
+    - Submit form without username added to ensure input field ‘required’ attribute was working correctly and alert displayed prompted customer to add input. 
+    - Submit form without password added to ensure input field ‘required’ attribute was working correctly and alert displayed prompted customer to add input.
+
+- Sign up form on login.html: 
+    - Checked on both mobile, ipad and desktop devices. 
+    - Submit form without email address added to ensure input field ‘required’ attribute was working correctly and alert displayed prompted customer to input email address. 
+    - Submit form without name added to ensure input field ‘required’ attribute was working correctly and alert displayed prompted customer to input email address.
+
+- Add Review Form, Edit Review From and Delete Review Form. 
+    - Form fully tested by submitted while leaving one input field empty at a time to ensure the correct ‘required’ attribute was returning and now allowing the form to submit without all required fields being filled in. 
+
+- Add Review Form: 
+    - Submitted fully filled in review and reviewed on reviews page to ensure review displayed as intended. 
+    - Checkded Mongo DB to ensure data captured correctly
+
+- Edit Review Form
+    - Submittled fully edited review and reviewed on reviews page to ensure review displayed as intended. 
+    - Checkded Mongo DB to ensure data captured correctly
+
+- Delete Review Form: 
+  - Submitted form (clicked delete) and reviewed on reviews page to ensure review was removed as intended. 
+  - Checkded Mongo DB to ensure data captured correctly
+
+#### Image Validation
+
+-   I went through each page to ensure all images displayed correctly. 
+-   I went through each file to ensure all Alt Text had been applied correctly to each image url to validate accessibility requirements. 
+
+
 ### Site Performance Validation
 
 ### Final Manual UAT Testing
 
 ### Debugging
-
-#### Console Log:
 
 #### Live Testing:
 
