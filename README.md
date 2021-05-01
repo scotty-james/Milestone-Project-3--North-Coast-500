@@ -326,7 +326,7 @@ In addition to testing on google chrome, I tested the game fully on the Safari a
 #### Dev Tools
 The project was built with mobile first in mind. Chrome Dev Tools toggle device toolbar was used to check the site on available devices to ensure the webapp was fully responsive. I checked each page individually on each device type. 
 
-Manual Device Check:
+#### Manual Device Check:
 
 I checked the site manually on the following devices - all pages check checked separately.
 - Samsung S10
