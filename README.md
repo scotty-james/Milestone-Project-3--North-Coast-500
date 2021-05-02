@@ -161,6 +161,52 @@ I really liked the simplicity of Open Sans and therfore didn't feel the need fro
 
 ---
 
+## <p align="center">Database Set Up
+
+This project relies on having a Database Schema designed in order to operate as intended. The database schema was designed and created using MongoDB. After creating the database, I created three collections - categories, posts, and users, which formed the structure of my database schema.  
+
+### Collections
+
+> The 'USERS' collection is designed to simply accept and store the required user details which are captured when the user creates an account, it contains the following structure:
+
+Document Labels 
+
+| _ID                                                                                              | ObjectId    |
+| ------------------------------------------------------------------------------------------------ | ----------- |
+| username                                                                                         | String      |
+| password                                                                                         | String      |
+
+Capturing the user data is the first step in the database design as a user must first create an account in order to interact with the website and create, edite, delete posts.
+
+
+> The 'CATEGORIES' collection was designed to take in a specific road trip. For now, the website is based on the North Coast 500 road trip, however, future plans for the website involve building out a community review site where users can share experiences on other popular road trips, like Ireland’s Wild Atlantic Way. The categories collection will allow me to add further road trips which will then allow users choose which Road Trip they would like to review. Adding a new road trip category will be an Admin privilege. 
+
+Document Labels 
+
+| _ID                                                                                              | ObjectId    |
+| ------------------------------------------------------------------------------------------------ | ----------- |
+| category_name                                                                                    | String      | 
+
+
+
+> The 'POSTS' collection was designed to handle the data from the actual review that the user will post to the website. It contains the following: 
+
+Document Labels 
+
+| _ID                                                                                              | ObjectId    |
+| ------------------------------------------------------------------------------------------------ | ----------- |
+| category_name                                                                                    | String      |
+| star_rating                                                                                      | String      |
+| post_title                                                                                       | String      |
+| post_description                                                                                 | String      |
+| image_url                                                                                        | String      |
+| created_by                                                                                       | String      |
+| review_date                                                                                      | String      |
+
+All of these data points are required on the add review form, a form cannot be submitted without contend added to each of these fields. 
+
+---
+
 ## <p align="center">Features
 
 ### Existing Features
@@ -232,52 +278,6 @@ I really liked the simplicity of Open Sans and therfore didn't feel the need fro
 
 ---
 
-## <p align="center">Database Set Up
-
-This project relies on having a Database Schema designed in order to operate as intended. The database schema was designed and created using MongoDB. After creating the database, I created three collections - categories, posts, and users, which formed the structure of my database schema.  
-
-### Collections
-
-> The 'USERS' collection is designed to simply accept and store the required user details which are captured when the user creates an account, it contains the following structure:
-
-Document Labels 
-
-| _ID                                                                                              | ObjectId    |
-| ------------------------------------------------------------------------------------------------ | ----------- |
-| username                                                                                         | String      |
-| password                                                                                         | String      |
-
-Capturing the user data is the first step in the database design as a user must first create an account in order to interact with the website and create, edite, delete posts.
-
-
-> The 'CATEGORIES' collection was designed to take in a specific road trip. For now, the website is based on the North Coast 500 road trip, however, future plans for the website involve building out a community review site where users can share experiences on other popular road trips, like Ireland’s Wild Atlantic Way. The categories collection will allow me to add further road trips which will then allow users choose which Road Trip they would like to review. Adding a new road trip category will be an Admin privilege. 
-
-Document Labels 
-
-| _ID                                                                                              | ObjectId    |
-| ------------------------------------------------------------------------------------------------ | ----------- |
-| category_name                                                                                    | String      | 
-
-
-
-> The 'POSTS' collection was designed to handle the data from the actual review that the user will post to the website. It contains the following: 
-
-Document Labels 
-
-| _ID                                                                                              | ObjectId    |
-| ------------------------------------------------------------------------------------------------ | ----------- |
-| category_name                                                                                    | String      |
-| star_rating                                                                                      | String      |
-| post_title                                                                                       | String      |
-| post_description                                                                                 | String      |
-| image_url                                                                                        | String      |
-| created_by                                                                                       | String      |
-| review_date                                                                                      | String      |
-
-All of these data points are required on the add review form, a form cannot be submitted without contend added to each of these fields. 
-
-
----
 
 ## <p align="center">Testing
 
@@ -574,12 +574,12 @@ To ensure that any site error is handled gracefully, a 404 error handler functio
 
 ### <p align="center"> Fixed Bugs
 
-| Bug                                                                                               | Fix |
-| ------------------------------------------------------------------------------------------------ | --------------------------------------------------------- |
+| Bug | Fix  |
+| ---------- | ---- |
 | No user messaging when new review submitted, informing them that the review posted successfully | To resolve this, I updated the add_post route in ap.py to call a flash message in the event of a successful submission. Tested and results are now as expected |
-| No user messaging when a review has been updated successfully.| To resolve this, I updated the function in app.py (/edit_post route) to include a flash message when form submission is successful. Tested and working ok. |
+| No user messaging when a review has been updated successfully. | To resolve this, I updated the function in app.py (/edit_post route) to include a flash message when form submission is successful. Tested and working ok. |
 | No user messaging when a review has been deleted successfully. | To resolve this, I updated the function in app.py (/delete_post route) to include a flash message when form submission is successful. Tested and working ok. |
-| 404 error handler returning as intended but with no messaging.  |I had originally used the code from the Flask documentation, copying and pasting the 404.html code also, however, to resolve the issue I removed the following code `{% block title %}Page Not Found{% endblock %} {% block body %} ` and replaced with `{% block content %}`, this resolved the error and returned the correct messaging. 
+| 404 error handler returning as intended but with no messaging.  | I had originally used the code from the Flask documentation, copying and pasting the 404.html code also, however, to resolve the issue I removed the following code `{% block title %}Page Not Found{% endblock %} {% block body %} ` and replaced with `{% block content %}`, this resolved the error and returned the correct messaging. 
  |
 
 ---
@@ -643,7 +643,6 @@ Underneath the repository name, click ‘Code’ which will open a drop down men
 1. To open the application, run the following command in the terminal python3 app.py. 
 1. To stop running the application at any time, type `CTRL+C` to quit. 
 
-
 ---
 
 ## <p align="center">Credits
@@ -658,11 +657,24 @@ Underneath the repository name, click ‘Code’ which will open a drop down men
 
 ## <p align="center">Resources
 
+- Flask Documentation
+- Python Documentation
+- Code Institute Slack Community
+- Code Institute Course Content completed to date
+- W3schools
+- Stackoverflow
+- MDN Mozilla
+
 ---
 
 ## <p align="center"> Acknowledgements
 
+- I would like to thank and acknowledge my mentor Spencer Barriball for his usual encouragement throughout the [project and for the helpful tips and recommendations along the way, thank you for your guidance and support!
+
+- The Code Institute Slack Community which continues to be a fantastic resource when troubleshooting. 
+
+
 ---
 
-### <p align="center">Thank you!</p>
+## <p align="center">Thank you!</p>
 

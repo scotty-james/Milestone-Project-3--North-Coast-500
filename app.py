@@ -67,7 +67,7 @@ def register():
 def login():
     if session.get('logged_in'):
         if session['logged_in'] is True:
-            return redirect(url_for('index', title="Sign In"))
+            return redirect(url_for('home', title="Sign In"))
 
     form = SigninForm()
 
@@ -81,8 +81,9 @@ def login():
             if check_password_hash(
                     existing_user["password"], request.form.get("password")):
                 session["user"] = request.form.get("username").lower()
+                session['logged_in'] = True
                 flash("Welcome, {}".format(request.form.get("username")))
-                return redirect(url_for("get_posts", username=session["user"]))
+                return redirect(url_for("home", username=session["user"]))
             else:
                 # in case where password does not match
                 flash("Incorrect Username and/or Password")
