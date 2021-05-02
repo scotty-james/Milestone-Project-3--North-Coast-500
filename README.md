@@ -230,7 +230,51 @@ I really liked the simplicity of Open Sans and therfore didn't feel the need fro
 - [Jigsaw](https://jigsaw.w3.org/css-validator/) - used to vaidate all CSS code. 
 - [W3C Markup Validation](https://validator.w3.org/#validate_by_input) - used to validate the HTML within the code base. 
 
+---
 
+## <p align="center">Database Set Up
+
+This project relies on having a Database Schema designed in order to operate as intended. The database schema was designed and created using MongoDB. After creating the database, I created three collections - categories, posts, and users, which formed the structure of my database schema.  
+
+### Collections
+
+> The 'USERS' collection is designed to simply accept and store the required user details which are captured when the user creates an account, it contains the following structure:
+
+Document Labels 
+
+| _ID                                                                                              | ObjectId    |
+| ------------------------------------------------------------------------------------------------ | ----------- |
+| username                                                                                         | String      |
+| password                                                                                         | String      |
+
+Capturing the user data is the first step in the database design as a user must first create an account in order to interact with the website and create, edite, delete posts.
+
+
+> The 'CATEGORIES' collection was designed to take in a specific road trip. For now, the website is based on the North Coast 500 road trip, however, future plans for the website involve building out a community review site where users can share experiences on other popular road trips, like Ireland’s Wild Atlantic Way. The categories collection will allow me to add further road trips which will then allow users choose which Road Trip they would like to review. Adding a new road trip category will be an Admin privilege. 
+
+Document Labels 
+
+| _ID                                                                                              | ObjectId    |
+| ------------------------------------------------------------------------------------------------ | ----------- |
+| category_name                                                                                    | String      | 
+
+
+
+> The 'POSTS' collection was designed to handle the data from the actual review that the user will post to the website. It contains the following: 
+
+Document Labels 
+
+| _ID                                                                                              | ObjectId    |
+| ------------------------------------------------------------------------------------------------ | ----------- |
+| category_name                                                                                    | String      |
+| star_rating                                                                                      | String      |
+| post_title                                                                                       | String      |
+| post_description                                                                                 | String      |
+| image_url                                                                                        | String      |
+| created_by                                                                                       | String      |
+| review_date                                                                                      | String      |
+
+All of these data points are required on the add review form, a form cannot be submitted without contend added to each of these fields. 
 ---
 
 ## <p align="center">Testing
@@ -269,7 +313,11 @@ I’ve designed the site in a way that as son as the user enters the site they i
 - The top image on the right hand side displays a map of the road trip route. 
 - The bottom right hand image displays the North 500 route sign. The route is commonly referred to as Scotland's route 66.
 
+#### Home Page
+
 ![User Story Image](static/images/readme_images/user_story_image1.png)
+
+#### Review Page
 ![User Story Image](static/images/readme_images/user_story_image3.png)
 
 > #### <p align="center">_As a new website user, I want to understand the reasons why I need to create an account so that I can make a decision on the value of doing so. 
@@ -277,7 +325,7 @@ I’ve designed the site in a way that as son as the user enters the site they i
 - To draw attention to the sign in functionality I have emphasised this within the nav bar - boxing it for additional focus. 
 - The Sign in page is simple and clear and has been built to allow the customer to sign up at speed. The form is simple and requires the user to provide a username and password only in order to create an account. 
 
-
+#### Sign In Page
 ![User Story Image](static/images/readme_images/user_story_image2.png)
 
 
@@ -287,9 +335,16 @@ I’ve designed the site in a way that as son as the user enters the site they i
 - The user can then edit their review once it has been submitted. To do this, the user needs to be logged in to their account to ensure only their review is protected and only they can edit. 
 - The user can update their review as many times as they like, and have full control of the content they add or remove. 
 
+#### Review Page
 ![User Story Image](static/images/readme_images/user_story_image4.png)
+
+#### Add Review Form
 ![User Story Image](static/images/readme_images/user_story_image5.png)
+
+#### Submitted Review
 ![User Story Image](static/images/readme_images/user_story_image6.png)
+
+#### Edit Review Form
 ![User Story Image](static/images/readme_images/user_story_image7.png)
 
 
@@ -300,7 +355,7 @@ I’ve designed the site in a way that as son as the user enters the site they i
 - The confirm delete page pre populates the review title, providing the user with additional comfort that they have deleted the correct post. 
 - There is a cancel button on the page, when clicked will take the customer back to the main reviews page - and of course, keeping the review alive. 
 
-
+#### Delete Review Page
 ![User Story Image](static/images/readme_images/user_story_image8.png)
 
 > #### <p align="center">_As an existing user, I want to be able to log out at any point when I am finished so that I know my account is secure. 
@@ -309,7 +364,7 @@ I’ve designed the site in a way that as son as the user enters the site they i
 - Once the user clicks the sign out button, a flash message will appear to let the customer know they have logged out. 
 - The user is then redirected to the login page on the site. This redirect is on purpose in case the user accidentally logs out and wishes to log back in. 
 
-
+#### On Sign Out
 ![User Story Image](static/images/readme_images/user_story_image9.png)
 
 
@@ -435,10 +490,10 @@ To ensure the standards of CRUD testing were met, I tested the following steps t
 - Fill in the Add Review form and submit.
 - Go to MongoDB and verify the new record has been added to the database. 
 
-Front end:
+#### Front end:
 ![Crud Testing](static/images/readme_images/crud_testing_image1.png)
 
-backend:
+#### Back end:
 ![Crud Testing](static/images/readme_images/crud_testing_image2.png)
 
 #### Read the review:
@@ -451,10 +506,10 @@ backend:
 - Go to the review page and verify that the submitted review has been posted to the intended place on the website. 
 - Go to mongo DB and verify that review has been amended in the database. 
 
-Front end:
+#### Front end:
 ![Crud Testing](static/images/readme_images/crud_testing_image3.png)
 
-backend:
+#### Back end:
 ![Crud Testing](static/images/readme_images/crud_testing_image4.png)
 
 #### Delete the review:
