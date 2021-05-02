@@ -5,7 +5,9 @@ from flask import (
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 from werkzeug.security import generate_password_hash, check_password_hash
-from forms import SignupForm, SigninForm, AddReviewForm, EditReviewForm, DeleteForm
+from forms import (
+    SignupForm, SigninForm,
+    AddReviewForm, EditReviewForm, DeleteForm)
 from datetime import date
 if os.path.exists("env.py"):
     import env
@@ -119,8 +121,10 @@ def add_post():
             "review_date": current_date
         })
         flash("Review Submitted")
-        return redirect(url_for('get_posts', title='New Post Added'))
-    return render_template('add_post.html', title='Add Post', form=form)
+        return redirect(url_for(
+            'get_posts', title='New Post Added'))
+    return render_template(
+        'add_post.html', title='Add Post', form=form)
 
 
 # Edit Post Route
@@ -128,10 +132,12 @@ def add_post():
 def edit_post(post_id):
     today_date = date.today()
     current_date = today_date.strftime("%d %b %y")
-    post_db = mongo.db.posts.find_one({'_id': ObjectId(post_id)})
+    post_db = mongo.db.posts.find_one({
+        '_id': ObjectId(post_id)})
     if request.method == 'GET':
         form = EditReviewForm(data=post_db)
-        return render_template('edit_post.html', post=post_db, form=form)
+        return render_template(
+            'edit_post.html', post=post_db, form=form)
     form = EditReviewForm(request.form)
     if form.validate_on_submit():
         post_db = mongo.db.posts
@@ -156,10 +162,12 @@ def edit_post(post_id):
 # Delete Post Route
 @app.route('/delete_post/<post_id>', methods=['GET', 'POST'])
 def delete_post(post_id):
-    post_db = mongo.db.posts.find_one({'_id': ObjectId(post_id)})
+    post_db = mongo.db.posts.find_one({
+        '_id': ObjectId(post_id)})
     if request.method == 'GET':
         form = DeleteForm(data=post_db)
-        return render_template('delete_post.html', title="Delete post", form=form)
+        return render_template(
+            'delete_post.html', title="Delete post", form=form)
     form = DeleteForm(request.form)
     if form.validate_on_submit():
         posts_db = mongo.db.posts
@@ -167,8 +175,10 @@ def delete_post(post_id):
             '_id': ObjectId(post_id),
         })
         flash("Review Deleted")
-        return redirect(url_for('get_posts', title='Review Deleted'))
-    return render_template('delete_post.html', title="delete review", form=form)
+        return redirect(url_for(
+            'get_posts', title='Review Deleted'))
+    return render_template(
+        'delete_post.html', title="delete review", form=form)
 
 
 # Error handler Route

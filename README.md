@@ -275,6 +275,8 @@ Document Labels
 | review_date                                                                                      | String      |
 
 All of these data points are required on the add review form, a form cannot be submitted without contend added to each of these fields. 
+
+
 ---
 
 ## <p align="center">Testing
@@ -295,13 +297,23 @@ The following pages were passed through the official W3C validation site with no
 
 - style.css: Congratulations! No Error Found.
 
-![HTML Validator Results](static/images/readme_images/css_validator.png)
+![CSS Validator Results](static/images/readme_images/css_validator.png)
 
 ### JSHint
 
 The following files were passed through JSHint with no warnings detected.
 
 - script.js
+
+### PEP8 Python Validator
+
+The following pages were validated using PEP8 without error. 
+
+- app.py
+- forms.py
+
+![PEP8 Validator Results](static/images/readme_images/PEP8_image1.png)
+
 
 ### User Story Testing Validation
 
@@ -578,13 +590,59 @@ To ensure that any site error is handled gracefully, a 404 error handler functio
 
 ## <p align="center">Version Control Management
 
+For this project, I used Git for version control.
+
+- All code was written in Gitpod.
+- At regular intervals and when new features were added to the site, - I added my files to the staging environment using the `git add .` command.
+- I then committed to the local repository using the `git commit -m` command.
+- I then pushed the local git to my GitHub repository using the `git push` command.
+- Throughout the development lifecycle of the site, I used commit messages that were in the imperative language.
+
 ---
 
 ## <p align="center">Deployment
 
 ### Deployment Steps
 
+This website was deployed using Heroku. The following steps were taken. 
+
+1. Within the IDE, create a requirements.txt file by running the following command in the terminal `pip3 freeze --local > requirements.txt`
+1. Next, create a Procfile by running the following command in the terminal `echo web: python app.py > Procfile`
+1. Open Heroku and Log in. 
+1. Click the ‘NEW’ button at the top right hand corner, select ‘Create New App’.
+1. Provide a name for the project (this must be unique), select the region closest to you and click ‘Create App’.
+1. In the Deployment Method section, select Github.
+1. Select your Github account and type in your repo in the search bar, once selected, connect. 
+1. Navigate to the ‘Settings’ tab and click the Reveal Config Vars button. 
+1. Now set the variables for IP, PORT, SECRET_KEY, MONGO_URI and MONGODB_NAME. These must match with those in the env.py file.
+1. Within the automatic deploys section, select ‘Enable Automatic Deploys’
+1. Select ‘Deploy Branch’
+1. Heroku will now start to build the app and will display on screen when ready to open. 
+
+
 ### How To run this Project Locally
+
+Mongo DB account set up and connected to this website. 
+Pip3 installed on the machine to enable the required packages. 
+Python3 (used as primary language)
+
+Steps: 
+
+1. Sign in to MongoDB account.
+1. Create a new cluster and database. Within the database, create three collections following this Schema Design. The database name needs to be north_coast.
+1. Click here to access the site's repository
+Underneath the repository name, click ‘Code’ which will open a drop down menu.
+1. Click the HTTPs section (a red line should be displayed underneath).
+1. To clone the repository using HTTPS, under "Clone with HTTPS", click the clipboard icon.
+1. Open your IDE terminal
+1. Type ‘git clone’ and paste in the url you just copied - it should look like this `$ git clone https://github.com/scotty-james/North-Coast-500.git`
+1. Press enter which will then create your local clone.
+1. You must ensure that all project requirements are downloaded by running the following command `pip3 install -r requirements.txt`
+1. Create a new file called `env.py` and set the correct variables for IP, PORT, SECRET_KEY, MONGO_URI and MONGODB_NAME (these must match the variables set in Heroku). 
+1. Create a .gitignore file if not already created and ensure env.py and pycache are added. 
+1. To open the application, run the following command in the terminal python3 app.py. 
+1. To stop running the application at any time, type `CTRL+C` to quit. 
+
 
 ---
 
