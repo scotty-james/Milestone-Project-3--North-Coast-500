@@ -37,6 +37,10 @@ def get_posts():
 # Sign Up Form Route
 @app.route('/register', methods=['GET', 'POST'])
 def register():
+    if session.get('logged_in'):
+        if session['logged_in'] is True:
+            return redirect(url_for('home', title="Sign In"))
+
     form = SignupForm(request.form)
     if form.validate_on_submit():
         existing_users = mongo.db.users
@@ -56,6 +60,7 @@ def register():
 
         # put the new user into 'session' cookie
         session["user"] = request.form.get("username").lower()
+        session['logged_in'] = True
         flash("Sign Up Successful!")
         return redirect(url_for("get_posts", username=session["user"]))
 
@@ -101,13 +106,16 @@ def login():
 @app.route("/logout")
 def logout():
     flash("You have been signed out")
-    session.pop("user")
+    session.clear()
     return redirect(url_for("login"))
 
 
 # Add Review Route
 @app.route('/add_post', methods=['GET', 'POST'])
 def add_post():
+    if session.get('logged_in'):
+        if session['logged_in'] is False:
+            return redirect(url_for('home', title="Sign In"))
     today_date = date.today()
     current_date = today_date.strftime("%d %b %y")
     form = AddReviewForm(request.form)
