@@ -543,6 +543,23 @@ To ensure that any site error is handled gracefully, a 404 error handler functio
 
 ![404](static/images/readme_images/readme_404.png)
 
+### Deployment Version 
+
+All testing was completed in both the development version of the site and the deplyed version of the site. 
+
+### User Action Responce Testing
+
+The following tests were carried to ensure the correct response messaging was returning upon specific user actions. 
+
+- Incorrect login attempt
+- User sign up successful
+- User sign in successful
+- User submits review
+- User edits review
+- User deletes Review
+
+Flash response 
+![Flash](static/images/readme_images/flash_image1.png)
 
 
 ### Final Manual UAT Testing
@@ -638,7 +655,7 @@ Python3 (used as primary language)
 Steps: 
 
 1. Sign in to MongoDB account.
-1. Create a new cluster and database. Within the database, create three collections following this Schema Design. The database name needs to be north_coast.
+1. Create a new cluster and database. Within the database, create three collections following this [_Schema Design_](#collections). The database name needs to be north_coast.
 1. Click here to access the site's repository
 Underneath the repository name, click ‘Code’ which will open a drop down menu.
 1. Click the HTTPs section (a red line should be displayed underneath).
@@ -664,9 +681,8 @@ All content was written by the site developer however inspiration was taken from
 
 ### Media
 
-Images used for the site were obtained from Canva.com, Shutterstock, and unsplash. 
-
-Images used for the posted reviews were obtained from google images. 
+- Images used for the site were obtained from Canva.com, Shutterstock, and unsplash. 
+- Images used for the posted reviews were obtained from google images. 
 
 ### Code
 
