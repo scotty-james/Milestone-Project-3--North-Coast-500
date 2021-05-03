@@ -612,6 +612,8 @@ Flash response
 
 ### Remaining Bugs:
 
+All identified bugs were resolved after final testing. Future releases will focus on adding additional layers of security to the website and user authentification. 
+
 ---
 
 ## <p align="center">Version Control Management
