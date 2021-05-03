@@ -44,7 +44,7 @@ def register():
     form = SignupForm(request.form)
     if form.validate_on_submit():
         existing_users = mongo.db.users
-        # checks database to see if username exists
+        """checks database to see if username exists"""
         existing_user = mongo.db.users.find_one(
             {"username": request.form.get("username").lower()})
 
@@ -58,7 +58,7 @@ def register():
         }
         mongo.db.users.insert_one(register)
 
-        # put the new user into 'session' cookie
+        """put the new user into 'session' cookie"""
         session["user"] = request.form.get("username").lower()
         session['logged_in'] = True
         flash("Sign Up Successful!")
@@ -77,12 +77,12 @@ def login():
     form = SigninForm()
 
     if form.validate_on_submit():
-        # checks database to see if username exists
+        """checks database to see if username exists"""
         existing_user = mongo.db.users.find_one(
             {"username": request.form.get("username").lower()})
 
         if existing_user:
-            # checks hashed password to ensure match with user input
+            """checks hashed password to ensure match with user input"""
             if check_password_hash(
                     existing_user["password"], request.form.get("password")):
                 session["user"] = request.form.get("username").lower()
@@ -90,12 +90,12 @@ def login():
                 flash("Welcome, {}".format(request.form.get("username")))
                 return redirect(url_for("home", username=session["user"]))
             else:
-                # in case where password does not match
+                """in case where password does not match"""
                 flash("Incorrect Username and/or Password")
                 return redirect(url_for("login", form=form))
 
         else:
-            # in case where username does not exist
+            """in case where username does not exist"""
             flash("Incorrect Username and/or Password")
             return redirect(url_for("login", form=form))
 
@@ -113,6 +113,7 @@ def logout():
 # Add Review Route
 @app.route('/add_post', methods=['GET', 'POST'])
 def add_post():
+    """checks if user not logged in"""
     if not session.get("user"):
         return redirect(url_for('login', title="Sign In"))
 

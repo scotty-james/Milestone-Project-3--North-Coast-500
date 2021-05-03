@@ -10,7 +10,6 @@ I built this travel information and review site for my third milestone project f
 
 ---
 
-
 ## Contents
 
 - [**User Experience (UX)**](#ux)
@@ -28,6 +27,8 @@ I built this travel information and review site for my third milestone project f
     - [_Design_](#design)
     - [_Colour_](#colour)
     - [_Typography_](#typography)
+- [**Data Set Up**](#data-set-up)
+    - [_Collections_](#collections)
 - [**Features**](#features)
   - [_Existing Features_](#existing-features)
   - [_Features Left to Implement_](#features-left-to-implement)
@@ -134,6 +135,11 @@ Sign Out Tab
 #### Wireframes
 
 All wireframes were created using [Balsamic](https://balsamiq.com/).
+
+The wireframes for this project can be found below.
+
+- [Mobile Wireframes](https://github.com/scotty-james/North-Coast-500/blob/master/static/docs/wireframes_mobile.pdf)
+- [Desktop Wireframes](https://github.com/scotty-james/North-Coast-500/blob/master/static/docs/wireframes_desktop.pdf)
 
 ### Surface
 
@@ -489,7 +495,7 @@ With these issues fixed, the site now returns a healthy lighthouse score across 
 
 To ensure the standards of CRUD testing were met, I tested the following steps to ensure no errors returned. 
 
-#### Create a new user:
+> #### Create a new user:
 - Created new user on the front end website
 - Checked mongo DB collection to ensure the user was added to the database. 
 - Log in using new users credentials. 
@@ -498,7 +504,7 @@ To ensure the standards of CRUD testing were met, I tested the following steps t
 - Go back to the site and log in using users credentials. 
 - Verified that the account had been deleted and the user could no longer log in. 
 
-#### Create a new record (Add Review)
+> #### Create a new record (Add Review)
 - Fill in the Add Review form and submit.
 - Go to MongoDB and verify the new record has been added to the database. 
 
@@ -508,10 +514,10 @@ To ensure the standards of CRUD testing were met, I tested the following steps t
 #### Back end:
 ![Crud Testing](static/images/readme_images/crud_testing_image2.png)
 
-#### Read the review:
+> #### Read the review:
 - Go to the review page and verify that the submitted review has been posted to the intended place on the website. 
 
-#### Update the Review:
+> #### Update the Review:
 - Got to review and click ‘Update’. 
 - Change the review content. 
 - Submit update
@@ -524,7 +530,7 @@ To ensure the standards of CRUD testing were met, I tested the following steps t
 #### Back end:
 ![Crud Testing](static/images/readme_images/crud_testing_image4.png)
 
-#### Delete the review:
+> #### Delete the review:
 - Go to the review and click ‘delete’. 
 - Verify that I am redirected to a ‘confirm delete’ page that ensures the user intends to delete the review. 
 - Click delete to verify that I want to delete the review. 

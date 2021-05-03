@@ -33,6 +33,10 @@ main {
   flex: 1 0 auto;
 }
 
+.content {
+  font-family: 'Open Sans', sans-serif;
+}
+
 h1,
 h2,
 h3,
