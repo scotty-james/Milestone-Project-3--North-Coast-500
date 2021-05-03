@@ -652,7 +652,9 @@ Underneath the repository name, click ‘Code’ which will open a drop down men
 
 ### Content
 
-All content was written by the site developer however inspiration was taken from the,- [North Coast 500 official website](https://www.northcoast500.com/) - which I used as my main source of information for the website.  
+All content was written by the site developer however inspiration was taken from the,- [North Coast 500 official website](https://www.northcoast500.com/) and [Travel Scotland](https://www.scotland.org.uk/guide/places/durness-visitor-guide)  - which I used as my main source of information for the website.  
+
+
 
 ### Media
 
@@ -682,7 +684,7 @@ Images used for the posted reviews were obtained from google images.
 
 ## <p align="center"> Acknowledgements
 
-- I would like to thank and acknowledge my mentor Spencer Barriball for his usual encouragement throughout the [project and for the helpful tips and recommendations along the way, thank you for your guidance and support!
+- I would like to thank and acknowledge my mentor Spencer Barriball for his usual encouragement throughout the project and for the helpful tips and defensive programming recommendations along the way, thank you for your guidance and support!
 
 - The Code Institute Slack Community which continues to be a fantastic resource when troubleshooting. 
 
