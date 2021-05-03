@@ -113,9 +113,9 @@ def logout():
 # Add Review Route
 @app.route('/add_post', methods=['GET', 'POST'])
 def add_post():
-    if session.get('logged_in'):
-        if session['logged_in'] is False:
-            return redirect(url_for('home', title="Sign In"))
+    if not session.get("user"):
+        return redirect(url_for('login', title="Sign In"))
+
     today_date = date.today()
     current_date = today_date.strftime("%d %b %y")
     form = AddReviewForm(request.form)

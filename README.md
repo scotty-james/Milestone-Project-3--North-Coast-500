@@ -580,7 +580,10 @@ To ensure that any site error is handled gracefully, a 404 error handler functio
 | No user messaging when a review has been updated successfully. | To resolve this, I updated the function in app.py (/edit_post route) to include a flash message when form submission is successful. Tested and working ok. |
 | No user messaging when a review has been deleted successfully. | To resolve this, I updated the function in app.py (/delete_post route) to include a flash message when form submission is successful. Tested and working ok. |
 | 404 error handler returning as intended but with no messaging.  | I had originally used the code from the Flask documentation, copying and pasting the 404.html code also, however, to resolve the issue I removed the following code `{% block title %}Page Not Found{% endblock %} {% block body %} ` and replaced with `{% block content %}`, this resolved the error and returned the correct messaging. 
- |
+ | When the user is in ‘logged in’ state, the login and register pages would still appear if /login or /register url submitted. I did not want this to happen as when the user is logged in there are no requirements for these pages to appear. Code written in the log in handler was not running correctly.  | In the login route in app.py, I fixed the log in handler code that determined the redirect when a user was logged in, in the redirect I had ‘index’ when in fact the correct url was ‘home’. I updated this and applied the same code to the ‘register route’.  
+| 404 page returning when a user attempted to log in using a username that had not yet been created. The expected behavior should be to return a flash message that advised the user the username/password was incorrect. | After inspection, I realised that I had added this to the login handler as a defensive programming mechanism but it wasn't returning the desired effect. I removed the `_or_404` from `existing_user = mongo.db.users.find_one_or_404` which fixed the issue.| 
+| In user is in a ‘not logged in’ state. The ability to find the 'add review' form and attempt to submit a review was still possible. However, access to the review form is for logged in users only therefore I had to apply further defensive programming. | Within the ‘/add_post’ route, I added the following code to prevent this from happening. This checks if the user is in session and if not, redirects the user to the login page. `if not session.get("user"): return redirect(url_for('login', title="Sign In"))`
+|
 
 ---
 
@@ -649,9 +652,19 @@ Underneath the repository name, click ‘Code’ which will open a drop down men
 
 ### Content
 
+All content was written by the site developer however inspiration was taken from the,- [North Coast 500 official website](https://www.northcoast500.com/) - which I used as my main source of information for the website.  
+
 ### Media
 
+Images used for the site were obtained from Canva.com, Shutterstock, and unsplash. 
+
+Images used for the posted reviews were obtained from google images. 
+
 ### Code
+
+- [Flask](https://flask.palletsprojects.com/en/1.1.x/patterns/errorpages/) for the 404 handler code (both HTML and Python code)
+- [Flask](https://flask-wtf.readthedocs.io/en/stable/quickstart.html) for the forms used on the site. 
+- Code Institute Course Content for site user authentication
 
 ---
 
